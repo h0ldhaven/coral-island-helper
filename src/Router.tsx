@@ -7,10 +7,10 @@ import ErrorPage from "./pages/ErrorPage";
 const App: React.FC = () => {
 
     return (
-        <Router>
+        <Router basename={import.meta.env.BASE_URL}>
             <Routes>
+                <Route path='/' element={<HomePage />} />
                 <Route path='*' element={<ErrorPage />} />
-                <Route path='/coral-island-helper/' element={<HomePage />} />
             </Routes>
         </Router>
     );
