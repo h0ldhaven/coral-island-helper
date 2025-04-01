@@ -27,7 +27,7 @@ const Home: React.FC<HomeProps> = ({ setActiveComponent }) => {
                 <h3 className="text-2xl font-bold mb-4">Cuisine</h3>
                 <p className="text-md mb-4">Découvrez des recettes et astuces pour réussir vos plats dans <strong>Coral Island</strong>.</p>
                 <p className="text-md text-crimson">
-                    Sélectionnez le menu "Cuisine" dans la navigation pour commencer.
+                    Cliquez-ici pour commencer.
                 </p>
             </div>
 
@@ -35,7 +35,7 @@ const Home: React.FC<HomeProps> = ({ setActiveComponent }) => {
                 <h3 className="text-2xl font-bold mb-4">Craft</h3>
                 <p className="text-md mb-4">Maîtrisez l'art du crafting et créez des objets uniques dans le jeu.</p>
                 <p className="text-md text-crimson">
-                    Sélectionnez le menu "Craft" dans la navigation pour commencer.
+                    Cliquez-ici pour commencer.
                 </p>
             </div>
 
@@ -43,7 +43,7 @@ const Home: React.FC<HomeProps> = ({ setActiveComponent }) => {
                 <h3 className="text-2xl font-bold mb-4">Enchantement</h3>
                 <p className="text-md mb-4">Apprenez les secrets de l'enchantement et améliorez vos équipements.</p>
                 <p className="text-md text-crimson">
-                    Sélectionnez le menu "Enchantement" dans la navigation pour commencer.
+                    Cliquez-ici pour commencer.
                 </p>
             </div>
         </div>

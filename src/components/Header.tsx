@@ -6,7 +6,7 @@ const Header: React.FC = () => {
         <header className="relative overflow-clip">
             <img
                 className="absolute object-cover object-center w-full h-full -z-50"
-                src="images/background_1.webp"
+                src="../../public/images/background_1.webp"
                 alt="Fond de coral island"
                 aria-hidden="true"
             />
@@ -17,7 +17,7 @@ const Header: React.FC = () => {
                 <Link to="/" aria-label="Bouton retour a l'acceuil" role="button">
                     <img
                         className="md:left-[2.5vw] md:absolute md:top-1/2 md:-translate-y-1/2 w-auto max-w-36 sm:max-w-44 lg:max-w-48 h-auto z-50"
-                        src="/images/icon.webp"
+                        src="../../public/images/icon.webp"
                         alt="Logo de coral island"
                         aria-hidden="true"
                     />

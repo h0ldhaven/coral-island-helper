@@ -10,7 +10,7 @@ const App: React.FC = () => {
         <Router>
             <Routes>
                 <Route path='*' element={<ErrorPage />} />
-                <Route path='/' element={<HomePage />} />
+                <Route path='/coral-island-helper/' element={<HomePage />} />
             </Routes>
         </Router>
     );
