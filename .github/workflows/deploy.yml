@@ -8,6 +8,9 @@ on:
     tags:
       - "prod*"  # Déploiement uniquement si un tag "prod" est créé
 
+permissions:
+  contents: write 
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
