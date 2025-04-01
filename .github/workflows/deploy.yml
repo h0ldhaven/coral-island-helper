@@ -2,11 +2,11 @@ name: Deploy Vite App to GitHub Pages
 
 on:
   push:
-    branches:
-      - dev  # Déploiement auto sur dev
-  create:
     tags:
       - "prod*"  # Déploiement uniquement si un tag "prod" est créé
+
+permissions:
+  contents: write 
 
 jobs:
   deploy:
