@@ -8,5 +8,5 @@ export default defineConfig({
         react(),
         tailwindcss(),
     ],
-    base: "/coral-island-helper/",
+    base: '/coral-island-helper/',
 });

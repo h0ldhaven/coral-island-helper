@@ -5,7 +5,7 @@ const Header: React.FC = () => {
     return(
         <header className="relative overflow-clip">
             <img
-                className="absolute object-cover object-center w-full h-full -z-50"
+                className="absolute object-cover object-center w-full h-full -z-10"
                 src={`${import.meta.env.BASE_URL}images/background_1.webp`}
                 alt="Fond de coral island"
                 aria-hidden="true"

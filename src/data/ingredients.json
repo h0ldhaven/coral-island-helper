@@ -1,0 +1,22 @@
+[
+    {
+      "id": "flour",
+      "name": "Flour",
+      "type": "grain"
+    },
+    {
+      "id": "cheese",
+      "name": "Cheese",
+      "type": "dairy"
+    },
+    {
+      "id": "soybean",
+      "name": "Soybean",
+      "type": "vegetable"
+    },
+    {
+      "id": "tomato",
+      "name": "Tomato",
+      "type": "vegetable"
+    }
+  ]

@@ -23,26 +23,53 @@
     text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.7); /* Ajuste l'ombre comme tu veux */
 }
 
-@keyframes waveCurrent {
-    0% {
-      transform: translateX(-100%) translateY(-100%);
-    }
-    50% {
-      transform: translateX(100%) translateY(100%);
-    }
-    100% {
-      transform: translateX(-100%) translateY(-100%);
-    }
-  }
+/* Le fond océanique */
+.bg-ocean {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, #59a9f3, #1bceee, #27aee4);
+  background-size: 400% 400%;
+  animation: ocean-wave 60s infinite linear;
+  z-index: -90;
+  overflow: hidden;
+}
+
+/* Effet lumineux pour simuler le mouvement sous l'eau */
+.bg-ocean::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(89, 169, 243, 0.07) 20%, transparent 80%);
+  background-size: 250% 250%;
+  animation: light-waves 15s infinite ease-in-out;
+  mix-blend-mode: overlay;
+  opacity: 0.4;
+  filter: blur(10px);
+  z-index: -1;
+}
+
+/* Animation des reflets lumineux sous l'eau */
+@keyframes light-waves {
+  0% { transform: translateX(-20%) translateY(-20%) scale(1.1); }
+  50% { transform: translateX(20%) translateY(20%) scale(1.2); }
+  100% { transform: translateX(-20%) translateY(-20%) scale(1.1); }
+}
+
+header {
+  position: relative;
+  overflow: hidden;
   
-  .animate-current {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 200%;
-    height: 200%;
-    background: rgba(255, 255, 255, 0.3);
-    opacity: 0.4;
-    animation: waveCurrent 15s infinite ease-in-out;
-    pointer-events: none; /* Empêche l'élément d'interférer avec les clics */
-  }
+}
+
+/* Animation des vagues sous l'océan */
+@keyframes ocean-wave {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 100% 100%; }
+  100% { background-position: 0% 0%; }
+}

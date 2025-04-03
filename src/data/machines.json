@@ -1,0 +1,14 @@
+[
+  {
+    "id": "oven",
+    "name": "Oven"
+  },
+  {
+    "id": "blender",
+    "name": "Blender"
+  },
+  {
+    "id": "skillet",
+    "name": "Skillet"
+  }
+]

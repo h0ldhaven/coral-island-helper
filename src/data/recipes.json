@@ -1,0 +1,34 @@
+[
+  {
+    "id": "burrito",
+    "name": "Burrito",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "Tortilla", "quantity": 1 },
+      { "id": "Soybean", "quantity": 1 },
+      { "id": "Any cheese", "quantity": 1 },
+      { "id": "Any vegetable", "quantity": 1 }
+    ],
+    "machines": ["oven", "skillet"]
+  },
+  {
+    "id": "lettuce wrap",
+    "name": "Lettuce wrap",
+    "quantity": 1,
+    "ingredients": [
+      { "id": "tomato", "quantity": 2 }
+    ],
+    "machines": ["oven"]
+  },
+  {
+    "id": "guacamole",
+    "name": "Guacamole",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "tomato", "quantity": 1 },
+      { "id": "garlic", "quantity": 1 },
+      { "id": "avocado", "quantity": 1 }
+    ],
+    "machines": ["oven"]
+  }
+]

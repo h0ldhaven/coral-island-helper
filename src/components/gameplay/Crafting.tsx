@@ -1,14 +1,11 @@
-import React from 'react'
+import React from 'react';
 
 const Crafting: React.FC = () => {
-  return (
-    <section className="flex flex-col items-center justify-center min-h-screen relative overflow-hidden font-comfortaa">
-      {/* Animation de vagues */}
-      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-blue-600 via-teal-500 to-cyan-400 opacity-60 animate-wave"></div>
-
-      Crafting
-    </section>
-  )
-}
+    return (
+        <section className="flex flex-col items-center justify-baseline min-h-screen relative p-4">
+            Crafting
+        </section>
+    );
+};
 
 export default Crafting;
