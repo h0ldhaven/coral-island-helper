@@ -3,7 +3,7 @@ name: Deploy Vite App to GitHub Pages
 on:
   push:
     tags:
-      - "prod*"  # Déploiement uniquement si un tag "prod" est créé
+      - "v*.*.*"  # Déploiement uniquement si un tag "prod" est créé
 
 permissions:
   contents: write 
