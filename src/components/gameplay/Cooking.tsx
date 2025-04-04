@@ -64,7 +64,7 @@ const Cooking: React.FC = () => {
                                     checkImage.src = pngSrc;
                                 }}
                                 alt={recipe.name}
-                                className='w-full h-auto object-contain'
+                                className='w-full h-auto object-contain duration-500 ease-out hover:scale-120 hover:cursor-pointer'
                             />
                             {/* Infobulle */}
                             <div role='tooltip' className='absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-max px-2 py-1 bg-gray-900 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity'>

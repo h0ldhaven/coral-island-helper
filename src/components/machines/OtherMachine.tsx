@@ -57,7 +57,7 @@ const OtherMachine: React.FC<OtherMachineProps> = ({ machine, recipe }) => {
                             checkImage.src = pngSrc;
                         }}
                         alt={itemName}
-                        className='w-[120px] sm:w-[160px] h-auto object-contain p-2'
+                        className='w-[120px] sm:w-[160px] h-auto object-contain p-2 duration-500 ease-out hover:scale-110 hover:cursor-pointer'
                     />
 
                     {/* Infobulle item final */}
@@ -100,7 +100,7 @@ const OtherMachine: React.FC<OtherMachineProps> = ({ machine, recipe }) => {
                                         checkImage.src = pngSrc;
                                     }}
                                     alt={ingredient.id}
-                                    className='w-[120px] sm:w-[160px] h-auto object-contain'
+                                    className='w-[120px] sm:w-[160px] h-auto object-contain duration-500 ease-out hover:scale-110 hover:cursor-pointer'
                                 />
 
                                 {/* Infobulle ingredients */}
@@ -142,7 +142,7 @@ const OtherMachine: React.FC<OtherMachineProps> = ({ machine, recipe }) => {
                                                         checkImage.src = pngSrc;
                                                     }}
                                                     alt={alt.name}
-                                                    className='w-[120px] sm:w-[160px] h-auto object-contain'
+                                                    className='w-[120px] sm:w-[160px] h-auto object-contain duration-500 ease-out hover:scale-110 hover:cursor-pointer'
                                                 />
 
                                                 <div role='tooltip' className='absolute top-auto mt-4 left-1/2 -translate-x-1/2 mb-2 w-max px-2 py-1 bg-gray-900 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity'>

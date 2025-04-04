@@ -21,26 +21,26 @@ const Home: React.FC<HomeProps> = ({ setActiveComponent }) => {
 
             {/* Sections avec mention des catégories */}
             <div className='flex flex-wrap justify-center gap-8 z-10'>
-                <div className='bg-teal-600 p-6 rounded-lg shadow-lg text-center w-52 md:w-64' onClick={() => setActiveComponent('cuisine')}>
-                    <h3 className='text-2xl font-bold mb-4'>Cuisine</h3>
-                    <p className='text-md mb-4'>Découvrez des recettes et astuces pour réussir vos plats dans <strong>Coral Island</strong>.</p>
-                    <p className='text-md text-crimson'>
+                <div className='bg-blue-400/60 border-2 border-blue-400/60 hover:border-red-400/60 p-6 rounded-lg shadow-lg text-center w-52 md:w-64 duration-500 ease-out hover:scale-110 hover:cursor-pointer' onClick={() => setActiveComponent('cuisine')}>
+                    <h3 className='text-white/70 text-2xl font-bold mb-4'>Cuisine</h3>
+                    <p className='text-md mb-4 text-emerald-200'>Découvrez des recettes et astuces pour réussir vos plats dans <strong>Coral Island</strong>.</p>
+                    <p className='text-md text-white'>
                     Cliquez-ici pour commencer.
                     </p>
                 </div>
 
-                <div className='bg-teal-600 p-6 rounded-lg shadow-lg text-center w-52 md:w-64' onClick={() => setActiveComponent('craft')}>
-                    <h3 className='text-2xl font-bold mb-4'>Craft</h3>
-                    <p className='text-md mb-4'>Maîtrisez l'art du crafting et créez des objets uniques dans le jeu.</p>
-                    <p className='text-md text-crimson'>
+                <div className='bg-blue-400/60 border-2 border-blue-400/60 hover:border-red-400/60 p-6 rounded-lg shadow-lg text-center w-52 md:w-64 duration-500 ease-out hover:scale-110 hover:cursor-pointer' onClick={() => setActiveComponent('craft')}>
+                    <h3 className='text-white/70 text-2xl font-bold mb-4'>Craft</h3>
+                    <p className='text-md mb-4 text-emerald-200'>Maîtrisez l'art du crafting et créez des objets uniques dans le jeu.</p>
+                    <p className='text-md text-white'>
                     Cliquez-ici pour commencer.
                     </p>
                 </div>
 
-                <div className='bg-teal-600 p-6 rounded-lg shadow-lg text-center w-52 md:w-64' onClick={() => setActiveComponent('enchantement')}>
-                    <h3 className='text-2xl font-bold mb-4'>Enchantement</h3>
-                    <p className='text-md mb-4'>Apprenez les secrets de l'enchantement et améliorez vos équipements.</p>
-                    <p className='text-md text-crimson'>
+                <div className='bg-blue-400/60 border-2 border-blue-400/60 hover:border-red-400/60 p-6 rounded-lg shadow-lg text-center w-52 md:w-64 duration-500 ease-out hover:scale-110 hover:cursor-pointer' onClick={() => setActiveComponent('enchantement')}>
+                    <h3 className='text-white/70 text-2xl font-bold mb-4'>Enchantement</h3>
+                    <p className='text-md mb-4 text-emerald-200'>Apprenez les secrets de l'enchantement et améliorez vos équipements.</p>
+                    <p className='text-md text-white'>
                     Cliquez-ici pour commencer.
                     </p>
                 </div>
