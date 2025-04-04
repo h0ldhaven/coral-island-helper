@@ -4,21 +4,83 @@
     "name": "Burrito",
     "quantity": 2,
     "ingredients": [
-      { "id": "Tortilla", "quantity": 1 },
-      { "id": "Soybean", "quantity": 1 },
-      { "id": "Any cheese", "quantity": 1 },
-      { "id": "Any vegetable", "quantity": 1 }
+      { "id": "tortilla", "quantity": 1 },
+      { "id": "soybean", "quantity": 1 },
+      { "id": "any cheese", "quantity": 1 },
+      { "id": "any vegetable", "quantity": 1 }
     ],
-    "machines": ["oven", "skillet"]
+    "machines": [
+      { "id":"seasoning set" }
+    ]
+  },
+  {
+    "id": "edamame",
+    "name": "Edamame",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "peas", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"seasoning set" }
+    ]
   },
   {
     "id": "lettuce wrap",
-    "name": "Lettuce wrap",
-    "quantity": 1,
+    "name": "Feuille de laitue",
+    "quantity": 2,
     "ingredients": [
-      { "id": "tomato", "quantity": 2 }
+      { "id": "lettuce", "quantity": 1 },
+      { "id": "soybean", "quantity": 1 }
     ],
-    "machines": ["oven"]
+    "machines": [
+      { "id":"seasoning set" }
+    ]
+  },
+  {
+    "id": "onigiri",
+    "name": "Onigiri",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "rice", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"seasoning set" }
+    ]
+  },
+  {
+    "id": "slimy okra",
+    "name": "Gombi visqueux",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "okra", "quantity": 1 },
+      { "id": "slime goop", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"seasoning set" }
+    ]
+  },
+  {
+    "id": "spicy sauerkraut",
+    "name": "Choucroute épicée",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "hot pepper", "quantity": 1 },
+      { "id": "red cabbage", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"seasoning set" }
+    ]
+  },
+  {
+    "id": "green smoothie",
+    "name": "Smoothie vert",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "any vegetable", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"blender" }
+    ]
   },
   {
     "id": "guacamole",
@@ -29,6 +91,71 @@
       { "id": "garlic", "quantity": 1 },
       { "id": "avocado", "quantity": 1 }
     ],
-    "machines": ["oven"]
+    "machines": [
+      { "id":"blender" }
+    ]
+  },
+  {
+    "id": "hummus",
+    "name": "Houmous",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "olive oil", "quantity": 1 },
+      { "id": "peas", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"blender" }
+    ]
+  },
+  {
+    "id": "ice cream",
+    "name": "Glace",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "any milk", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"blender" }
+    ]
+  },
+  {
+    "id": "jamu",
+    "name": "Phytothérapie",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "ginger", "quantity": 1 },
+      { "id": "ginseng", "quantity": 1 },
+      { "id": "any honey", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"blender" }
+    ]
+  },
+  {
+    "id": "ketchup",
+    "name": "Ketchup",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "gourmet salt", "quantity": 1 },
+      { "id": "tomato", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"blender" }
+    ]
+  },
+  {
+    "id": "peanut butter",
+    "name": "Beurre de cacahuète",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "almond", "quantity": 1 },
+      { "id": "butter", "quantity": 1 }
+    ],
+    "alternatives": [
+        { "replaceItem": "butter", "id": "large butter", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"blender" }
+    ]
   }
 ]
