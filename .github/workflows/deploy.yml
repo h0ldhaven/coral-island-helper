@@ -34,3 +34,15 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
           publish_branch: gh-pages
+
+      - name: Delete Previous Tag
+        run: |
+          PREVIOUS_TAG=$(git tag --sort=-creatordate | sed -n 2p)  # Récupère le tag précédent (2e tag le plus récent)
+          if [[ -n "$PREVIOUS_TAG" ]]; then
+            echo "Deleting previous tag: $PREVIOUS_TAG"
+            git push origin --delete $PREVIOUS_TAG
+          else
+            echo "No previous tag found. Skipping deletion."
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
