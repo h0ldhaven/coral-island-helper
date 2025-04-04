@@ -107,7 +107,7 @@ const Cooking: React.FC = () => {
                         );
                     })
                 ) : (
-                    <p>Veuillez sélectionner une recette...</p>
+                    <p className='mt-20 font-comfortaa text-xl text-blue-100'>Veuillez sélectionner une recette...</p>
                 )}
             </div>
         </section>
