@@ -31,9 +31,10 @@ export default tseslint.config(
       ...reactHooks.configs.recommended.rules,
 
       // ✅ Ajout des règles stylistiques
-      'indent': ['error', 4], // Indentation à 4 espaces
+      'indent': ['error', 4, { SwitchCase: 1 }], // Indentation à 4 espaces
       'semi': 'error', // Oblige les points-virgules
       'quotes': ['error', 'single'], // Utilisation des apostrophes (' ')
+      'jsx-quotes': ['error', 'prefer-single'],
       'prefer-const': 'off', // Désactive l'obligation d'utiliser const
 
       // ✅ React Refresh
