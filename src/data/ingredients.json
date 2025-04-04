@@ -1,22 +1,27 @@
 [
-    {
-      "id": "flour",
-      "name": "Flour",
-      "type": "grain"
-    },
-    {
-      "id": "cheese",
-      "name": "Cheese",
-      "type": "dairy"
-    },
-    {
-      "id": "soybean",
-      "name": "Soybean",
-      "type": "vegetable"
-    },
-    {
-      "id": "tomato",
-      "name": "Tomato",
-      "type": "vegetable"
-    }
-  ]
+  { "id": "tortilla", "name": "Tortilla", "type": "ingredient" },
+  { "id": "soybean", "name": "Soja", "type": "ingredient" },
+  { "id": "any cheese", "name": "N'importe quel fromage", "type": "ingredient" },
+  { "id": "any vegetable", "name": "N'importe quel légume", "type": "ingredient" },
+  { "id": "lettuce", "name": "Laitue", "type": "ingredient" },
+  { "id": "rice", "name": "Riz", "type": "ingredient" },
+  { "id": "okra", "name": "Gombo", "type": "ingredient" },
+  { "id": "slime goop", "name": "Slime gluant", "type": "ingredient" },
+  { "id": "hot pepper", "name": "Piment fort", "type": "ingredient" },
+  { "id": "red cabbage", "name": "Chou rouge", "type": "ingredient"},
+  { "id": "tomato", "name": "Tomate", "type": "ingredient" },
+  { "id": "garlic", "name": "Ail", "type": "ingredient" },
+  { "id": "avocado", "name": "Avocat", "type": "ingredient" },
+  { "id": "peas", "name": "Petits pois", "type": "ingredient" },
+  { "id": "olive oil", "name": "Huile d'olive", "type": "ingredient" },
+  { "id": "any milk", "name": "N'importe quel lait", "type": "ingredient" },
+  { "id": "ginger", "name": "Gingembre", "type": "ingredient" },
+  { "id": "ginseng", "name": "Ginseng", "type": "ingredient" },
+  { "id": "any honey", "name": "N'importe quel miel", "type": "ingredient" },
+  { "id": "gourmet salt", "name": "Sel gourmet", "type": "ingredient" },
+  { "id": "almond", "name": "Amande", "type": "ingredient" },
+  { "id": "butter", "name": "Beurre", "type": "ingredient" },
+  { "id": "large butter", "name": "Gros Beurre", "type": "ingredient" },
+  { "id": "any fruit", "name": "N'importe quel fruit", "type": "ingredient" },
+  { "id": "wasabi", "name": "Wasabi", "type": "ingredient" }
+]

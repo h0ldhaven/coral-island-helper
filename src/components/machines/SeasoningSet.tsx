@@ -1,25 +1,26 @@
 import React from 'react';
 import { Alternative, Machine, Recipe } from '../RecipeComponent';
 
-type OvenProps = {
+type SeasoningSetProps = {
     machine: Machine;
     recipe: Recipe;
     alternatives: Alternative[];
 }
 
-const Oven: React.FC<OvenProps> = ({ machine, recipe }) => {
+const SeasoningSet: React.FC<SeasoningSetProps> = ({ machine, recipe }) => {
     const { id: itemId, name: itemName, quantity: itemQuantity, ingredients, alternatives } = recipe;
+    
     return(
         <div className='flex flex-col justify-center items-center w-auto mt-6'>
-            {/* Haut du four */}
-            <div className='relative w-[20rem] min-w-[5rem] max-w-[35vw] min-h-[5rem] max-h-[35vh] h-[14rem] bg-white/50 rounded-t-full p-4 flex flex-col items-center'>
+            {/* Haut du container */}
+            <div className='relative w-[35rem] min-w-[5rem] max-w-[65vw] min-h-[5rem] max-h-[35vh] h-[14rem] bg-white/50 rounded-t-3xl p-4 flex flex-col items-center'>
                 <div className='relative w-full h-full flex justify-center items-center overflow-hidden'>
                     <img 
-                        src={`${import.meta.env.BASE_URL}images/machines/webp/${machine.id}.webp`} 
+                        src={`${import.meta.env.BASE_URL}images/machines/webp/${machine.id.replace(/ /g, '_')}.webp`} 
                         onError={(e) => {
                             const target = e.currentTarget;
                             target.onerror = null;
-                            const pngSrc = `${import.meta.env.BASE_URL}images/machines/${machine.id}.png`;
+                            const pngSrc = `${import.meta.env.BASE_URL}images/machines/png/${machine.id.replace(/ /g, '_')}.png`;
                             const checkImage = new Image();
                             checkImage.onload = () => {
                                 target.src = pngSrc;
@@ -69,8 +70,8 @@ const Oven: React.FC<OvenProps> = ({ machine, recipe }) => {
             </div>
 
 
-            {/* Séparation entre le haut du four et le bas */}
-            <div className='w-[20rem] min-w-[5rem] max-w-[35vw] h-0.5 bg-gray-400/60'></div>
+            {/* Séparation entre le haut du container et le bas */}
+            <div className='w-[35rem] min-w-[5rem] max-w-[65vw] h-0.5 bg-gray-400/60'></div>
 
 
             {/* Bas du container */}
@@ -163,4 +164,4 @@ const Oven: React.FC<OvenProps> = ({ machine, recipe }) => {
     );
 };
 
-export default Oven;
+export default SeasoningSet;

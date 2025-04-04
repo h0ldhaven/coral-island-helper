@@ -5,7 +5,7 @@ import Nav from '../components/Nav';
 
 const HomePage: React.FC = () => {
     return(
-        <main className="flex flex-col h-full min-h-screen" role="main">
+        <main className='flex flex-col h-full min-h-screen' role='main'>
             <Header />
             <Nav />
         </main>
