@@ -9,12 +9,12 @@ const Home: React.FC<HomeProps> = ({ setActiveComponent }) => {
         <section className='flex flex-col items-center justify-center min-h-screen relative overflow-hidden font-comfortaa'>
 
             {/* Titre principal */}
-            <h1 className='text-4xl md:text-5xl font-extrabold leading-tight text-center mb-6 z-10 text-white'>
+            <h1 className='mt-14 px-4 text-4xl md:text-5xl font-extrabold leading-tight text-center mb-6 z-10 text-white'>
             Bienvenue dans Coral Island !
             </h1>
 
             {/* Introduction */}
-            <p className='text-lg md:text-xl mb-8 text-center max-w-xl z-10 text-white'>
+            <p className='px-6 text-lg md:text-xl mb-8 text-center max-w-xl z-10 text-white'>
             Explorez et apprenez comment maîtriser les différentes mécaniques de jeu de <strong>Coral Island</strong>. 
             Que vous soyez passionné par la cuisine, le craft, ou l'enchantement, nous avons des guides et des astuces pour vous aider.
             </p>
@@ -47,7 +47,7 @@ const Home: React.FC<HomeProps> = ({ setActiveComponent }) => {
             </div>
 
             {/* Call to action */}
-            <div className='mt-12 text-center z-10'>
+            <div className='mt-12 mb-10 px-4 text-center z-10'>
                 <p className='text-lg md:text-xl'>
                 Prêt à explorer ? Utilisez le menu ci-dessus pour choisir une catégorie et commencez votre aventure !
                 </p>

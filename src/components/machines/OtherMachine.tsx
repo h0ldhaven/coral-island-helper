@@ -137,16 +137,16 @@ const OtherMachine: React.FC<OtherMachineProps> = ({ machine, recipe }) => {
                                                         };
                                                         checkImage.onerror = () => {
                                                             target.src = `${import.meta.env.BASE_URL}images/icon.webp`;
-                                                            target.alt = alt.id;
+                                                            target.alt = alt.name;
                                                         };
                                                         checkImage.src = pngSrc;
                                                     }}
-                                                    alt={alt.id}
+                                                    alt={alt.name}
                                                     className='w-[120px] sm:w-[160px] h-auto object-contain'
                                                 />
 
-                                                <div role='tooltip' className='absolute top-full left-1/2 -translate-x-1/2 mb-2 w-max px-2 py-1 bg-gray-900 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity'>
-                                                    {alt.id}
+                                                <div role='tooltip' className='absolute top-auto mt-4 left-1/2 -translate-x-1/2 mb-2 w-max px-2 py-1 bg-gray-900 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity'>
+                                                    {alt.name}
                                                 </div>
 
                                                 <span className='absolute text-xs text-green-950 font-bold bottom-1 right-1 rounded'>x{alt.quantity}</span>
