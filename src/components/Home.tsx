@@ -9,7 +9,7 @@ const Home: React.FC<HomeProps> = ({ setActiveComponent }) => {
         <section className='flex flex-col items-center justify-center min-h-screen relative overflow-hidden font-comfortaa'>
 
             {/* Titre principal */}
-            <h1 className='text-4xl md:text-5xl font-extrabold leading-tight text-center mb-6 z-10 text-white'>
+            <h1 className='mt-14 text-4xl md:text-5xl font-extrabold leading-tight text-center mb-6 z-10 text-white'>
             Bienvenue dans Coral Island !
             </h1>
 
@@ -47,7 +47,7 @@ const Home: React.FC<HomeProps> = ({ setActiveComponent }) => {
             </div>
 
             {/* Call to action */}
-            <div className='mt-12 text-center z-10'>
+            <div className='mt-12 mb-10 text-center z-10'>
                 <p className='text-lg md:text-xl'>
                 Prêt à explorer ? Utilisez le menu ci-dessus pour choisir une catégorie et commencez votre aventure !
                 </p>
