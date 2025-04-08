@@ -6,20 +6,20 @@ import OtherMachine from './machines/OtherMachine';
 export type Machine = {
     id: string;
     name: string;
-}
+};
 
 export type Alternative = {
     id: string; 
     name: string; 
     quantity: number;
     replaceItem: string; 
-}
+};
 
 export type Ingredient = {
     id: string;
     name: string;
     quantity: number;
-}
+};
 
 export type Recipe = {
     id: string;
@@ -28,7 +28,7 @@ export type Recipe = {
     ingredients: Ingredient[];
     alternatives?: Alternative[];
     machines: Machine[];
-}
+};
 
 type RecipeProps = {
     machine: Machine;
