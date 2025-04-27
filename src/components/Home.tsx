@@ -31,7 +31,7 @@ const Home: React.FC<HomeProps> = ({ setActiveComponent }) => {
             <div className='flex flex-wrap justify-center gap-8 z-10'>
                 {homeMenu.map((menu: HomeMenu) => (
                     <div 
-                        className='bg-blue-400/60 border-2 border-blue-400/60 hover:border-red-400/60 p-6 rounded-lg shadow-lg text-center w-52 md:w-64 duration-500 ease-out hover:scale-110 hover:cursor-pointer' 
+                        className='bg-blue-400/60 border-2 border-blue-400/60 hover:border-red-400/60 p-6 rounded-lg shadow-lg text-center w-52 md:w-64 duration-500 ease-out hover:scale-110 hover:cursor-pointer active:scale-110' 
                         onClick={() => setActiveComponent(menu.id)}
                         key={menu.id}
                     >
