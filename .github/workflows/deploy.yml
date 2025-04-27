@@ -3,7 +3,7 @@ name: Deploy Vite App to GitHub Pages
 on:
   push:
     tags:
-      - "v*.*.*"  # Déploiement uniquement si un tag "prod" est créé
+      - v*.*.*
 
 permissions:
   contents: write 
@@ -13,14 +13,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
+      - name: Checkout the main branch
         uses: actions/checkout@v4
+        with:
+          ref: main
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 18
-          cache: npm
+          node-version: 22
 
       - name: Install Dependencies
         run: npm install
