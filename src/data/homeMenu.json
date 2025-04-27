@@ -1,0 +1,20 @@
+[
+    { 
+        "id": "cuisine",
+        "component": "Cooking",
+        "title": "Cuisine",
+        "description": "Découvrez des recettes et astuces pour réussir vos plats dans Coral Island."
+    },
+    { 
+        "id": "craft",
+        "component": "Crafting",
+        "title": "Craft",
+        "description": "Maîtrisez l'art du crafting et créez des objets uniques dans le jeu."
+    },
+    { 
+        "id": "enchantement",
+        "component": "Enchanting",
+        "title": "Enchantement",
+        "description": "Apprenez les secrets de l'enchantement et améliorez vos équipements."
+    }
+]

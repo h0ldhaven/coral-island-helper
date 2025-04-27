@@ -71,6 +71,7 @@
       { "id":"seasoning set" }
     ]
   },
+
   {
     "id": "green smoothie",
     "name": "Smoothie vert",
@@ -156,6 +157,134 @@
     ],
     "machines": [
       { "id":"blender" }
+    ]
+  },
+  {
+    "id": "smoothie",
+    "name": "Smoothie",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "any fruit", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"blender" }
+    ]
+  },
+  {
+    "id": "wasabi paste",
+    "name": "Pâte de wasabi",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "wasabi", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"blender" }
+    ]
+  },
+
+  {
+    "id": "cenil",
+    "name": "Cenil",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "taro root", "quantity": 1 },
+      { "id": "sugar", "quantity": 1 },
+      { "id": "any coconut", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"ceramic bowl" }
+    ]
+  },
+  {
+    "id": "egg custard",
+    "name": "Crème aux oeufs",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "sugar", "quantity": 1 },
+      { "id": "any egg", "quantity": 1 },
+      { "id": "any milk", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"ceramic bowl" }
+    ]
+  },
+  {
+    "id": "es cendol",
+    "name": "Es cendol",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "rice flour", "quantity": 1 },
+      { "id": "syrup", "quantity": 1 },
+      { "id": "any coconut", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"ceramic bowl" }
+    ]
+  },
+  {
+    "id": "es doger",
+    "name": "Es doger",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "cow milk", "quantity": 1 },
+      { "id": "sweet potato", "quantity": 1 },
+      { "id": "syrup", "quantity": 1 },
+      { "id": "any coconut", "quantity": 1 }
+    ],
+    "alternatives": [
+        { "replaceItem": "cow milk", "id": "large cow milk", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"ceramic bowl" }
+    ]
+  },
+  {
+    "id": "klepon",
+    "name": "Klepon",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "rice flour", "quantity": 1 },
+      { "id": "sugar", "quantity": 1 },
+      { "id": "any coconut", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"ceramic bowl" }
+    ]
+  },
+  {
+    "id": "puree",
+    "name": "Purée",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "any fruit", "quantity": 1 }
+    ],
+    "alternatives": [
+        { "replaceItem": "any fruit", "id": "any vegetable", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"ceramic bowl" }
+    ]
+  },
+  {
+    "id": "wakame",
+    "name": "Wakame",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "seaweed", "quantity": 2 }
+    ],
+    "machines": [
+      { "id":"ceramic bowl" }
+    ]
+  },
+  {
+    "id": "yogurt",
+    "name": "Yogurt",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "any milk", "quantity": 2 }
+    ],
+    "machines": [
+      { "id":"ceramic bowl" }
     ]
   }
 ]
