@@ -38,7 +38,7 @@ const Cooking: React.FC = () => {
             <h2 className='text-3xl font-semibold text-center'>Recettes Disponibles</h2>
             <div className='w-30 h-1 bg-[#ffd166] my-2'></div>
             
-            <ul className='flex flex-wrap justify-center items-center sm:mt-0 xs:gap-2 sm:gap-3 md:gap-4 gap-1'>
+            <ul className='flex flex-wrap justify-center items-center sm:mt-0 xs:gap-2 sm:gap-3 md:gap-4 gap-1 mx-60'>
                 {recipesData.map((recipe) => (
                     <li
                         key={recipe.id}
