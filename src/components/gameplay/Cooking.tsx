@@ -25,7 +25,7 @@ const Cooking: React.FC = () => {
     }, []);
   
     const handleRecipeClick = (id: string) => {
-        setSelectedRecipeId(id);
+        setSelectedRecipeId((currentId) => (currentId === id ? null : id));
     };
   
     const selectedRecipe = recipesData.find((recipe) => recipe.id === selectedRecipeId);
