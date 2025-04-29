@@ -55,8 +55,8 @@ const FishCard: React.FC<FishCardProps> = ({ fish }) => {
 
                         {/* Météo */}
                         <div className='mt-2'>
-                            <p className='font-semibold'>Météo :</p>
-                            <div className='flex flex-wrap gap-2 mt-1'>
+                            <p className='font-bold'>Météo :</p>
+                            <div className='flex flex-wrap items-center gap-2 mt-1 mx-6'>
                                 {(() => {
                                     const weatherIcons: Record<string, string> = {
                                         'Ensoleillé': 'sunny',
@@ -65,6 +65,7 @@ const FishCard: React.FC<FishCardProps> = ({ fish }) => {
                                         'Vent': 'windy',
                                         'Orage': 'storm',
                                         'Nuageux': 'cloudy',
+                                        'Brouillard': 'foggy',
                                     };
 
                                     const rawWeatherList = fish.weather?.split(',') ?? [];
@@ -85,11 +86,11 @@ const FishCard: React.FC<FishCardProps> = ({ fish }) => {
                                         );
 
                                     return weathersToShow.map(([label, icon]) => (
-                                        <div key={icon} className='flex items-center gap-1'>
+                                        <div key={icon} className='flex items-center gap-1 bg-gray-600/50 rounded-full p-1'>
                                             <img
                                                 src={`${import.meta.env.BASE_URL}images/weather/png/${icon}.png`}
                                                 alt={label}
-                                                className='w-6 h-6'
+                                                className='w-10 h-10 duration-500 ease-out hover:scale-120 p-1'
                                                 title={label}
                                             />
                                         </div>
