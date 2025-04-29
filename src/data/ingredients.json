@@ -54,5 +54,8 @@
   { "id": "puree", "name": "Purée", "type": "ingredient" },
   { "id": "wakame", "name": "Wakame", "type": "ingredient" },
   { "id": "seaweed", "name": "Algues", "type": "ingredient" },
-  { "id": "yogurt", "name": "Yogurt", "type": "ingredient" }
+  { "id": "yogurt", "name": "Yogurt", "type": "ingredient" },
+  { "id": "bread", "name": "Pain", "type": "ingredient" },
+  { "id": "shallot", "name": "Échalote", "type": "ingredient" },
+  { "id": "any fish", "name": "N'importe quel poisson", "type": "ingredient" }
 ]

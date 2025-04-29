@@ -286,5 +286,17 @@
     "machines": [
       { "id":"ceramic bowl" }
     ]
+  },
+
+  {
+    "id": "fish sandwich",
+    "name": "Sandwich de poisson",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "any milk", "quantity": 2 }
+    ],
+    "machines": [
+      { "id":"ceramic bowl" }
+    ]
   }
 ]
