@@ -12,9 +12,9 @@
         "description": "Maîtrisez l'art du crafting et créez des objets uniques dans le jeu."
     },
     { 
-        "id": "enchantement",
-        "component": "Enchanting",
-        "title": "Enchantement",
-        "description": "Apprenez les secrets de l'enchantement et améliorez vos équipements."
+        "id": "fishing",
+        "component": "Fishing",
+        "title": "Pêche",
+        "description": "Apprenez les secrets de la pêche et améliorez vos connaissances sur la faune locale."
     }
 ]
