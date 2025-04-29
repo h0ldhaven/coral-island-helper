@@ -86,7 +86,7 @@ const FishCard: React.FC<FishCardProps> = ({ fish }) => {
                                         );
 
                                     return weathersToShow.map(([label, icon]) => (
-                                        <div key={icon} className='flex items-center gap-1 bg-gray-600/50 rounded-full p-1'>
+                                        <div key={icon} className='flex items-center gap-1 bg-gray-600/50 rounded-full p-1 mt-2'>
                                             <img
                                                 src={`${import.meta.env.BASE_URL}images/weather/png/${icon}.png`}
                                                 alt={label}
