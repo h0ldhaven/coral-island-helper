@@ -14,7 +14,8 @@ const OtherMachine: React.FC<OtherMachineProps> = ({ machine, recipe }) => {
         <div className='flex flex-col justify-center items-center w-auto mt-6'>
             {/* Haut du container */}
             <div className='relative w-[35rem] min-w-[5rem] max-w-[65vw] min-h-[5rem] max-h-[35vh] h-[14rem] bg-white/50 rounded-t-3xl p-4 flex flex-col items-center'>
-                <div className='relative w-full h-full flex justify-center items-center overflow-hidden'>
+                <div className='flex flex-col relative w-full h-full justify-center items-center overflow-hidden'>
+                    <h1 className='text-xs sm:text-lg lg:text-2xl font-bold font-comfortaa break-words text-center'>{machine.name}</h1>
                     <img 
                         src={`${import.meta.env.BASE_URL}images/machines/webp/${machine.id.replace(/ /g, '_')}.webp`} 
                         onError={(e) => {
