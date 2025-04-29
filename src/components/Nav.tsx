@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Cooking from './gameplay/Cooking';
 import Crafting from './gameplay/Crafting';
-import Enchanting from './gameplay/Enchanting';
+import Fishing from './gameplay/Fishing';
 import HomePage from './Home';
 
 const Nav: React.FC = () => {
@@ -9,7 +9,7 @@ const Nav: React.FC = () => {
     const [menuItems] = useState([
         { name: 'Cuisine', component: 'cuisine' },
         { name: 'Craft', component: 'craft' },
-        { name: 'Enchantement', component: 'enchantement' }
+        { name: 'Pêche', component: 'fishing' }
     ]);
 
     const handleMenuClick = (component: string) => {
@@ -62,7 +62,7 @@ const Nav: React.FC = () => {
                 {activeComponent === null && <HomePage setActiveComponent={setActiveComponent} />}
                 {activeComponent === 'cuisine' && <Cooking />}
                 {activeComponent === 'craft' && <Crafting />}
-                {activeComponent === 'enchantement' && <Enchanting />}
+                {activeComponent === 'fishing' && <Fishing />}
             </div>
         </nav>
     );

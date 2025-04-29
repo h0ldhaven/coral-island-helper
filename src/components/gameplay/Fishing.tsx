@@ -1,12 +1,12 @@
 import React from 'react';
 
-const Enchanting: React.FC = () => {
+const Fishing: React.FC = () => {
     return (
         <section className='flex flex-col items-center justify-baseline min-h-screen relative p-4'>
 
-            Enchanting
+            Fishing
         </section>
     );
 };
 
-export default Enchanting;
+export default Fishing;
