@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import fishesData from '../../data/fishs.json';
-import FishComponent from '../FishComponent';
+import FishComponent from './FishComponent';
 
 const Fishing: React.FC = () => {
     const [selectedFishId, setSelectedFishId] = useState<string | null>(null);
@@ -19,6 +19,14 @@ const Fishing: React.FC = () => {
             <h2 className='text-3xl font-semibold text-center'>Liste des poissons</h2>
             <div className='w-30 h-1 bg-[#ffd166] my-2'></div>
 
+            <div className='flex flex-row flex-wrap justify-center items-center gap-2 mt-6'>
+                {selectedFish ? (
+                    <FishComponent fish={selectedFish} />
+                ) : (
+                    <p className='mt-10 font-comfortaa text-xl text-blue-100'>Sélectionnez un poisson pour afficher ses informations...</p>
+                )}
+            </div>
+
             <ul className='flex flex-wrap justify-center items-center sm:mt-0 xs:gap-2 sm:gap-3 md:gap-4 gap-1 mx-60'>
                 {fishesData.map((fish) => (
                     <li
@@ -28,7 +36,7 @@ const Fishing: React.FC = () => {
                     >
                         <div className='group relative w-full h-full'>
                             <img 
-                                src={`${import.meta.env.BASE_URL}images/items/webp/${fish.id.replace(/ /g, '_').webp}`}
+                                src={`${import.meta.env.BASE_URL}images/items/webp/${fish.id.replace(/ /g, '_')}.webp`}
                                 onError={(e) => {
                                     const target = e.currentTarget;
                                     target.onerror = null;
@@ -56,14 +64,6 @@ const Fishing: React.FC = () => {
                     </li>
                 ))}
             </ul>
-
-            <div>
-                {selectedFish ? (
-                    <FishComponent />
-                ) : (
-                    <p className='mt-20 font-comfortaa text-xl text-blue-100'>Sélectionnez un poisson pour afficher ses informations...</p>
-                )}
-            </div>
         </section>
     );
 };

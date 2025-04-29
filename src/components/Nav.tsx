@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Cooking from './gameplay/Cooking';
 import Crafting from './gameplay/Crafting';
-import Fishing from './gameplay/Fishing';
+import Fishing from './Fishing/Fishing';
 import HomePage from './Home';
 
 const Nav: React.FC = () => {
