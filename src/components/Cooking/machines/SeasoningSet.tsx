@@ -5,15 +5,26 @@ type SeasoningSetProps = {
     machine: Machine;
     recipe: Recipe;
     alternatives: Alternative[];
+    onClose: () => void;
 }
 
-const SeasoningSet: React.FC<SeasoningSetProps> = ({ machine, recipe }) => {
+const SeasoningSet: React.FC<SeasoningSetProps> = ({ machine, recipe, onClose }) => {
     const { id: itemId, name: itemName, quantity: itemQuantity, ingredients, alternatives } = recipe;
     
     return(
         <div className='flex flex-col justify-center items-center w-auto mt-6'>
-            {/* Haut du container */}
             <div className='relative w-[35rem] min-w-[5rem] max-w-[65vw] min-h-[5rem] max-h-[35vh] h-[14rem] bg-white/50 rounded-t-3xl p-4 flex flex-col items-center'>
+                {/* close window */}
+                <button
+                    onClick={onClose}
+                    aria-label='Fermer'
+                    className='absolute right-0 top-0 mx-4 my-2 px-2 py-1 text-xl font-bold uppercase text-gray-800 hover:text-red-600 transition-colors duration-200 z-10'
+                    style={{ zIndex: 10 }} // Assurez-vous que le bouton est au-dessus des autres éléments
+                >
+                    X
+                </button>
+                
+                {/* Haut du container */}
                 <div className='flex flex-col relative w-full h-full justify-center items-center overflow-hidden'>
                     <h1 className='text-xs sm:text-lg lg:text-2xl font-bold font-comfortaa break-words text-center'>{machine.name}</h1>
                     <img 

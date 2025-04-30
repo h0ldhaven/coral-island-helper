@@ -33,28 +33,30 @@ export type Recipe = {
 type RecipeProps = {
     machine: Machine;
     recipe: Recipe;
+    onClose: () => void;
 };
 
-const renderMachine = (machine: Machine, recipe: Recipe) => {
+const renderMachine = (machine: Machine, recipe: Recipe, onClose: () => void) => {
     const alternatives = recipe.alternatives || [];
+
     switch (machine.id) {
         case 'oven':
-            return <Oven key={machine.id} machine={machine} recipe={recipe} alternatives={alternatives} />;
+            return <Oven key={machine.id} machine={machine} recipe={recipe} alternatives={alternatives} onClose={onClose} />;
         case 'seasoning set':
-            return <SeasoningSet key={machine.id} machine={machine} recipe={recipe} alternatives={alternatives} />;
+            return <SeasoningSet key={machine.id} machine={machine} recipe={recipe} alternatives={alternatives} onClose={onClose} />;
         default:
-            return <OtherMachine key={machine.id} machine={machine} recipe={recipe} alternatives={alternatives} />;
+            return <OtherMachine key={machine.id} machine={machine} recipe={recipe} alternatives={alternatives} onClose={onClose} />;
     }
 };
   
-const RecipeComponent: React.FC<RecipeProps> = ({ machine, recipe }) => {
+const RecipeComponent: React.FC<RecipeProps> = ({ machine, recipe, onClose }) => {
     return (
         <div className='w-auto h-full'>
             <div className='machines-container'>
                 {recipe.machines.length > 0 ? (
-                    renderMachine(machine, recipe)
+                    renderMachine(machine, recipe, onClose)
                 ) : (
-                    <OtherMachine key='default' machine={machine} recipe={recipe} alternatives={recipe.alternatives || []} />
+                    <OtherMachine key='default' machine={machine} recipe={recipe} alternatives={recipe.alternatives || []} onClose={onClose} />
                 )}
             </div>
         </div>

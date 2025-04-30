@@ -5,14 +5,25 @@ type OvenProps = {
     machine: Machine;
     recipe: Recipe;
     alternatives: Alternative[];
+    onClose: () => void;
 }
 
-const Oven: React.FC<OvenProps> = ({ machine, recipe }) => {
+const Oven: React.FC<OvenProps> = ({ machine, recipe, onClose }) => {
     const { id: itemId, name: itemName, quantity: itemQuantity, ingredients, alternatives } = recipe;
     return(
         <div className='flex flex-col justify-center items-center w-auto mt-6'>
-            {/* Haut du four */}
             <div className='relative w-[20rem] min-w-[5rem] max-w-[35vw] min-h-[5rem] max-h-[35vh] h-[14rem] bg-white/50 rounded-t-full p-4 flex flex-col items-center'>
+                {/* close window */}
+                <button
+                    onClick={onClose}
+                    aria-label='Fermer'
+                    className='absolute right-0 top-0 mx-4 my-2 px-2 py-1 text-xl font-bold uppercase text-gray-800 hover:text-red-600 transition-colors duration-200 z-10'
+                    style={{ zIndex: 10 }} // Assurez-vous que le bouton est au-dessus des autres éléments
+                >
+                    X
+                </button>
+
+                {/* Haut du four */}
                 <div className='flex flex-col relative w-full h-full justify-center items-center overflow-hidden'>
                     <h1 className='text-xs sm:text-lg lg:text-2xl font-bold font-comfortaa break-words text-center'>{machine.name}</h1>
                     <img 
