@@ -36,27 +36,99 @@ const FishCard: React.FC<FishCardProps> = ({ fish }) => {
                 {/* Texte centré & contenu */}
                 <div className='flex flex-col w-full items-center sm:items-start text-left sm:text-left'>
                     {/* Nom centré qui wrap bien */}
-                    <h1 className='text-lg sm:text-xl lg:text-2xl font-bold font-comfortaa break-words w-full'>
+                    <h1 className='text-lg sm:text-xl lg:text-2xl font-bold font-comfortaa break-words w-full text-center'>
                         {fish.name}
                     </h1>
 
                     {/* Barre séparatrice */}
-                    <div className='w-full h-0.5 bg-gray-400/60 my-2'></div>
+                    <div className='w-full h-0.5 bg-blue-300/50 my-2'></div>
 
                     {/* Infos en dessous */}
                     <div className='flex flex-col gap-1 text-sm sm:text-base w-full'>
+                        {/* ID */}
                         <p><strong>ID :</strong> {fish.id}</p>
-                        <p><strong>Prix :</strong> {fish.basic_price} Po</p>
+
+                        {/* Barre séparatrice */}
+                        <div className='w-full h-0.5 bg-blue-300/50 my-2'></div>
+
+                        {/* Rareté */}
                         <p><strong>Rareté :</strong> {fish.rarity}</p>
+
+                        {/* Barre séparatrice */}
+                        <div className='w-full h-0.5 bg-blue-300/50 my-2'></div>
+
+                        {/* Difficulté */}
                         <p><strong>Difficulté :</strong> {fish.difficulty}</p>
+
+                        {/* Barre séparatrice */}
+                        <div className='w-full h-0.5 bg-blue-300/50 my-2'></div>
+
+                        {/* Saison */}
                         <p><strong>Saison :</strong> {fish.season}</p>
-                        <p><strong>Lieux :</strong> {fish.location}</p>
-                        <p><strong>Heure :</strong> {fish.time}</p>
+
+                        {/* Barre séparatrice */}
+                        <div className='w-full h-0.5 bg-blue-300/50 my-2'></div>
+
+                        {/* Lieux */}
+                        <div className='mt-2'>
+                            <h1 className='text-center font-comfortaa font-semibold mb-2'>Lieu(x) d'apparition(s)</h1>
+                            <div className='w-[50%] h-0.5 bg-blue-500/50 my-1 text-center mx-auto'></div>
+                            <div className='ml-4 mt-6 mb-2 whitespace-pre-line'>
+                                {[...fish.location.matchAll(/([^(),-]+(?:\([^)]*\))?[^,-]*)(?:,|-)?/g)]
+                                    .map((match: RegExpMatchArray) => match[1].trim())
+                                    .filter((entry: string) => Boolean(entry))
+                                    .flatMap((entry: string, index: number) => {
+                                        const [beforeColon, afterColon] = entry.split(':');
+
+                                        if (afterColon !== undefined) {
+                                            return [
+                                                <div key={`title-${index}`} className='text-center font-semibold mt-2 mb-1'>
+                                                    {beforeColon.trim()} :
+                                                </div>,
+                                                <div key={`item-${index}`} className='flex items-start gap-2'>
+                                                    <span className='text-sm mt-1'>•</span>
+                                                    <span>{afterColon.trim()}</span>
+                                                </div>,
+                                            ];
+                                        }
+
+                                        return (
+                                            <div key={`entry-${index}`} className='flex items-start gap-2'>
+                                                <span className='text-sm mt-1'>•</span>
+                                                <span>{entry.trim()}</span>
+                                            </div>
+                                        );
+                                    })}
+                            </div>
+                        </div>
+
+                        {/* Barre séparatrice */}
+                        <div className='w-full h-0.5 bg-blue-300/50 my-2'></div>
+
+                        {/* Heure */}
+                        <div className='mt-2'>
+                            <h1 className='text-center font-comfortaa font-semibold mb-2'>Horaires d'apparition</h1>
+                            <div className='w-[50%] h-0.5 bg-blue-500/50 my-1 text-center mx-auto'></div>
+                            <p className='ml-4 mt-6 mb-2 whitespace-pre-line'>
+                                {fish.time.trim() === 'Toute la journée'
+                                    ? 'Toute la journée'
+                                    : fish.time
+                                        .replace(/ /g, '')
+                                        .replace(/:/g, 'h')
+                                        .replace(/(\d{2}h\d{2})-(\d{2}h\d{2})/g, '$1 → $2')
+                                        .replace(/,/g, '\n')
+                                }
+                            </p>
+                        </div>
+
+                        {/* Barre séparatrice */}
+                        <div className='w-full h-0.5 bg-blue-300/50 my-2'></div>
 
                         {/* Météo */}
                         <div className='mt-2'>
-                            <p className='font-bold'>Météo :</p>
-                            <div className='flex flex-wrap items-center gap-2 mt-1 mx-6'>
+                            <h1 className='text-center font-comfortaa font-semibold mb-2'>Conditions Météorologiques</h1>
+                            <div className='w-[50%] h-0.5 bg-blue-500/50 my-2 text-center mx-auto'></div>
+                            <div className='flex flex-wrap items-center justify-center gap-2 mt-1 mx-6'>
                                 {(() => {
                                     const weatherIcons: Record<string, string> = {
                                         'Ensoleillé': 'sunny',
@@ -99,9 +171,27 @@ const FishCard: React.FC<FishCardProps> = ({ fish }) => {
                             </div>
                         </div>
 
-                        {/* Prix alternatifs */}
-                        <div className='mt-4 w-full'>
-                            <h2 className='text-center font-comfortaa font-semibold mb-4'>Autres Prix :</h2>
+                        {/* Barre séparatrice */}
+                        <div className='w-full h-0.5 bg-blue-300/50 my-2'></div>
+
+                        {/* Prix */}
+                        <div className='mt-2 w-full'>
+                            <h1 className='text-center font-comfortaa font-semibold mb-2'>La revente</h1>
+                            <div className='w-[50%] h-0.5 bg-green-500/50 my-2 text-center mx-auto'></div>
+                            <h2 className='text-left font-comfortaa font-semibold mt-4 mb-4'>Prix de base :</h2>
+                            {/* Prix de base */}
+                            <div className='text-center mb-4'>
+                                <span className='inline-flex items-center justify-center gap-1'>
+                                    <p>{fish.basic_price}</p>
+                                    <img src={`${import.meta.env.BASE_URL}images/coin.png`} alt='po' className='w-4 h-4' />
+                                </span>
+                            </div>
+
+                            {/* Barre séparatrice */}
+                            <div className='w-full h-0.5 bg-blue-300/50 my-2'></div>
+
+                            {/* Prix alternatifs */}
+                            <h2 className='text-left font-comfortaa font-semibold mb-4'>Autres Prix :</h2>
                             <div className='grid grid-cols-2 sm:grid-cols-4 gap-4 text-center'>
                                 {/* Bronze */}
                                 <div className='flex flex-col items-center'>
@@ -156,7 +246,9 @@ const FishCard: React.FC<FishCardProps> = ({ fish }) => {
                                 </div>
                             </div>
                         </div>
-                        {/* etc. */}
+                        
+                        {/* Barre séparatrice */}
+                        <div className='w-full h-0.5 bg-blue-300/50 my-2'></div>
                     </div>
                 </div>
             </div>
