@@ -46,25 +46,53 @@ const FishCard: React.FC<FishCardProps> = ({ fish }) => {
                     {/* Infos en dessous */}
                     <div className='flex flex-col gap-1 text-sm sm:text-base w-full'>
                         {/* ID */}
-                        <p><strong>ID :</strong> {fish.id}</p>
+                        <div className='ml-4 mt-2 mb-2'>
+                            <p className='whitespace-pre-line'>
+                                <strong>ID :</strong> {fish.id}
+                            </p>
+                        </div>
 
                         {/* Barre séparatrice */}
                         <div className='w-full h-0.5 bg-blue-300/50 my-2'></div>
 
                         {/* Rareté */}
-                        <p><strong>Rareté :</strong> {fish.rarity}</p>
+                        <div className='ml-4 mt-2 mb-2'>
+                            <p className='whitespace-pre-line'>
+                                <strong>Rareté :</strong> {fish.rarity}
+                            </p>
+                        </div>
 
                         {/* Barre séparatrice */}
                         <div className='w-full h-0.5 bg-blue-300/50 my-2'></div>
 
                         {/* Difficulté */}
-                        <p><strong>Difficulté :</strong> {fish.difficulty}</p>
+                        <div className='ml-4 mt-2 mb-2'>
+                            <p className='whitespace-pre-line'>
+                                <strong>Difficulté :</strong> {fish.difficulty}
+                            </p>
+                        </div>
 
                         {/* Barre séparatrice */}
                         <div className='w-full h-0.5 bg-blue-300/50 my-2'></div>
 
                         {/* Saison */}
-                        <p><strong>Saison :</strong> {fish.season}</p>
+                        <div className='mt-2'>
+                            <h1 className='text-center font-comfortaa font-semibold mb-2'>Saison(s)</h1>
+                            <div className='w-[50%] h-0.5 bg-blue-500/50 my-1 text-center mx-auto'></div>
+                            <p className='ml-4 mt-6 mb-2 whitespace-pre-line'>
+                                {
+                                    fish.season
+                                        .trim()
+                                        .split(',')
+                                        .map((entry, index) => (
+                                            <span key={index} className='inline-flex items-start gap-1 mr-2'>
+                                                <span className='text-sm mt-1'>•</span>
+                                                <span>{entry.trim() || 'Peu importe'}</span>
+                                            </span>
+                                        ))
+                                }
+                            </p>
+                        </div>
 
                         {/* Barre séparatrice */}
                         <div className='w-full h-0.5 bg-blue-300/50 my-2'></div>
@@ -73,7 +101,7 @@ const FishCard: React.FC<FishCardProps> = ({ fish }) => {
                         <div className='mt-2'>
                             <h1 className='text-center font-comfortaa font-semibold mb-2'>Lieu(x) d'apparition(s)</h1>
                             <div className='w-[50%] h-0.5 bg-blue-500/50 my-1 text-center mx-auto'></div>
-                            <div className='ml-4 mt-6 mb-2 whitespace-pre-line'>
+                            <div className='ml-4 mt-6 mb-2'>
                                 {[...fish.location.matchAll(/([^(),-]+(?:\([^)]*\))?[^,-]*)(?:,|-)?/g)]
                                     .map((match: RegExpMatchArray) => match[1].trim())
                                     .filter((entry: string) => Boolean(entry))
@@ -81,22 +109,30 @@ const FishCard: React.FC<FishCardProps> = ({ fish }) => {
                                         const [beforeColon, afterColon] = entry.split(':');
 
                                         if (afterColon !== undefined) {
+                                            // Bloc avec titre (ex: "En automne :") + éléments ligne à puce
                                             return [
-                                                <div key={`title-${index}`} className='text-center font-semibold mt-2 mb-1'>
+                                                <div key={`title-${index}`} className='text-center font-semibold mt-4 mb-2'>
                                                     {beforeColon.trim()} :
                                                 </div>,
-                                                <div key={`item-${index}`} className='flex items-start gap-2'>
-                                                    <span className='text-sm mt-1'>•</span>
-                                                    <span>{afterColon.trim()}</span>
+                                                <div key={`items-${index}`} className='flex flex-wrap gap-x-4 gap-y-2 mb-2'>
+                                                    {afterColon
+                                                        .split(',')
+                                                        .map((item, subIndex) => (
+                                                            <span key={`item-${index}-${subIndex}`} className='inline-flex items-center gap-1'>
+                                                                <span className='text-sm'>•</span>
+                                                                <span>{item.trim()}</span>
+                                                            </span>
+                                                        ))}
                                                 </div>,
                                             ];
                                         }
 
+                                        // Bloc normal, en ligne, sans titre
                                         return (
-                                            <div key={`entry-${index}`} className='flex items-start gap-2'>
-                                                <span className='text-sm mt-1'>•</span>
+                                            <span key={`entry-${index}`} className='inline-flex items-center gap-1 mr-4'>
+                                                <span className='text-sm'>•</span>
                                                 <span>{entry.trim()}</span>
-                                            </div>
+                                            </span>
                                         );
                                     })}
                             </div>
@@ -111,12 +147,12 @@ const FishCard: React.FC<FishCardProps> = ({ fish }) => {
                             <div className='w-[50%] h-0.5 bg-blue-500/50 my-1 text-center mx-auto'></div>
                             <p className='ml-4 mt-6 mb-2 whitespace-pre-line'>
                                 {fish.time.trim() === 'Toute la journée'
-                                    ? 'Toute la journée'
-                                    : fish.time
+                                    ? '• Toute la journée'
+                                    : '• ' + fish.time
                                         .replace(/ /g, '')
-                                        .replace(/:/g, 'h')
+                                        .replace(/h/g, ':')
                                         .replace(/(\d{2}h\d{2})-(\d{2}h\d{2})/g, '$1 → $2')
-                                        .replace(/,/g, '\n')
+                                        .replace(/,/g, ' • ')
                                 }
                             </p>
                         </div>
