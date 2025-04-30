@@ -6,7 +6,22 @@ const Fishing: React.FC = () => {
     const [selectedFishId, setSelectedFishId] = useState<string | null>(null);
 
     const handleFishClick = (id: string) => {
-        setSelectedFishId((currentId) => (currentId === id ? null : id));
+        setSelectedFishId((currentId) => {
+            // Si la recette est déjà sélectionnée, on la ferme et on arrête de scroller
+            if (currentId === id) {
+                return null;
+            } else {
+                // Si une recette différente est sélectionnée, on fait défiler la page vers la div avec l'id "craft"
+                const craftDiv = document.getElementById('fish');
+                if (craftDiv) {
+                    craftDiv.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start', // Positionner le haut de la div en haut de la fenêtre
+                    });
+                }
+                return id;
+            }
+        });
     };
 
     const selectedFish = fishesData.find((fish) => fish.id === selectedFishId);
@@ -19,9 +34,12 @@ const Fishing: React.FC = () => {
             <h2 className='text-3xl font-semibold text-center'>Liste des poissons</h2>
             <div className='w-30 h-1 bg-[#ffd166] my-2'></div>
 
-            <div className='flex flex-row flex-wrap justify-center items-center gap-2 mt-6'>
+            <div id='fish' className='flex flex-row flex-wrap justify-center items-center gap-2 mt-6'>
                 {selectedFish ? (
-                    <FishComponent fish={selectedFish} />
+                    <FishComponent 
+                        fish={selectedFish} 
+                        onClose={() => setSelectedFishId(null)}
+                    />
                 ) : (
                     <p className='mt-10 font-comfortaa text-xl text-blue-100'>Sélectionnez un poisson pour afficher ses informations...</p>
                 )}
