@@ -57,5 +57,17 @@
   { "id": "yogurt", "name": "Yogurt", "type": "ingredient" },
   { "id": "bread", "name": "Pain", "type": "ingredient" },
   { "id": "shallot", "name": "Échalote", "type": "ingredient" },
-  { "id": "any fish", "name": "N'importe quel poisson", "type": "ingredient" }
+  { "id": "any fish", "name": "N'importe quel poisson", "type": "ingredient" },
+  { "id": "fresh salad", "name": "Salade fraîche", "type": "ingredient" },
+  { "id": "rainbow sandwich", "name": "Sandwich arc-en-ciel", "type": "ingredient" },
+  { "id": "any mayonnaise", "name": "N'importe quelle mayonnaise", "type": "ingredient" },
+  { "id": "duck mayonnaise", "name": "Mayonnaise de canard", "type": "ingredient" },
+  { "id": "large duck mayonnaise", "name": "Mayonnaise large de canard", "type": "ingredient" },
+  { "id": "mayonnaise", "name": "Mayonnaise ", "type": "ingredient" },
+  { "id": "large mayonnaise", "name": "Mayonnaise large", "type": "ingredient" },
+  { "id": "quail mayonnaise", "name": "Mayonnaise de caille", "type": "ingredient" },
+  { "id": "sashimi", "name": "Sashimi", "type": "ingredient" },
+  { "id": "sushi", "name": "Sushi", "type": "ingredient" },
+  { "id": "whole coconut drink", "name": "Boisson à la noix de coco", "type": "ingredient" },
+  { "id": "", "name": "", "type": "ingredient" }
 ]

@@ -293,10 +293,73 @@
     "name": "Sandwich de poisson",
     "quantity": 2,
     "ingredients": [
-      { "id": "any milk", "quantity": 2 }
+      { "id": "bread", "quantity": 1 },
+      { "id": "lettuce", "quantity": 1 },
+      { "id": "shallot", "quantity": 1 },
+      { "id": "any fish", "quantity": 1 }
     ],
     "machines": [
-      { "id":"ceramic bowl" }
+      { "id":"chef knife" }
+    ]
+  },
+  {
+    "id": "fresh salad",
+    "name": "Salade fraîche",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "any vegetable", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"chef knife" }
+    ]
+  },
+  {
+    "id": "rainbow sandwich",
+    "name": "Sandwich arc-en-ciel",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "bread", "quantity": 1 },
+      { "id": "tomato", "quantity": 1 },
+      { "id": "shallot", "quantity": 1 },
+      { "id": "any mayonnaise", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"chef knife" }
+    ]
+  },
+  {
+    "id": "sashimi",
+    "name": "Sashimi",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "wasabi", "quantity": 1 },
+      { "id": "any fish", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"chef knife" }
+    ]
+  },
+  {
+    "id": "sushi",
+    "name": "Sushi",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "rice", "quantity": 1 },
+      { "id": "any fish", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"chef knife" }
+    ]
+  },
+  {
+    "id": "whole coconut drink",
+    "name": "Boisson de noix de coco",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "any coconut", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"chef knife" }
     ]
   }
 ]
