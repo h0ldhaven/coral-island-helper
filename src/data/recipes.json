@@ -270,7 +270,7 @@
     "name": "Wakame",
     "quantity": 2,
     "ingredients": [
-      { "id": "seaweed", "quantity": 2 }
+      { "id": "seaweed", "quantity": 1 }
     ],
     "machines": [
       { "id":"ceramic bowl" }
@@ -281,7 +281,7 @@
     "name": "Yogurt",
     "quantity": 2,
     "ingredients": [
-      { "id": "any milk", "quantity": 2 }
+      { "id": "any milk", "quantity": 1 }
     ],
     "machines": [
       { "id":"ceramic bowl" }
@@ -361,5 +361,223 @@
     "machines": [
       { "id":"chef knife" }
     ]
+  },
+
+  {
+    "id": "banana fritter",
+    "name": "Beignets de banane",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "banana", "quantity": 1 },
+      { "id": "any flour", "quantity": 1 },
+      { "id": "any oil", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"frying pan" }
+    ]
+  },
+  {
+    "id": "beet chips",
+    "name": "Chips de betterave",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "beet", "quantity": 1 },
+      { "id": "any oil", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"frying pan" }
+    ]
+  },
+  {
+    "id": "donut",
+    "name": "Donut",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "canola oil", "quantity": 1 },
+      { "id": "potato", "quantity": 1 },
+      { "id": "sugar", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"frying pan" }
+    ]
+  },
+  {
+    "id": "falafel",
+    "name": "Falafel",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "cucumber", "quantity": 1 },
+      { "id": "peas", "quantity": 1 },
+      { "id": "any oil", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"frying pan" }
+    ]
+  },
+  {
+    "id": "fried rice",
+    "name": "Riz frit",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "rice", "quantity": 1 },
+      { "id": "shallot", "quantity": 1 },
+      { "id": "any egg", "quantity": 1 },
+      { "id": "any vegetable", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"frying pan" }
+    ]
+  },
+  {
+    "id": "fried tempeh",
+    "name": "Tempeh frit",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "tempeh", "quantity": 1 },
+      { "id": "any oil", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"frying pan" }
+    ]
+  },
+  {
+    "id" : "kale chips",
+    "name": "Chips de kale",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "kale", "quantity": 1 },
+      { "id": "any oil", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"frying pan" }
+    ]
+  },
+  {
+    "id" : "omurice",
+    "name": "Omura",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "carrot", "quantity": 1 },
+      { "id": "ketchup", "quantity": 1 },
+      { "id": "rice", "quantity": 1 },
+      { "id": "any egg", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"frying pan" }
+    ]
+  },
+  {
+    "id" : "pad thai",
+    "name": "Pad thaï",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "lemon", "quantity": 1 },
+      { "id": "shrimp", "quantity": 1 },
+      { "id": "wheat flour", "quantity": 1 },
+      { "id": "any vegetable", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"frying pan" }
+    ]
+  },
+  {
+    "id" : "peyek",
+    "name": "Peyek",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "almond", "quantity": 1 },
+      { "id": "wheat flour", "quantity": 1 },
+      { "id": "any caterpillar", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"frying pan" }
+    ]
+  },
+  {
+    "id" : "potato chips",
+    "name": "Chips de patate",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "potato", "quantity": 1 },
+      { "id": "any oil", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"frying pan" }
+    ]
+  },
+  {
+    "id" : "roasted almonds",
+    "name": "Amandes grillées",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "almond", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"frying pan" }
+    ]
+  },
+  {
+    "id" : "roasted chestnuts",
+    "name": "Châtaignes grillées",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "chestnut", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"frying pan" }
+    ]
+  },
+  {
+    "id" : "roasted mushroom",
+    "name": "Champignons rôtis",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "basil", "quantity": 1 },
+      { "id": "olive oil", "quantity": 1 },
+      { "id": "any mushroom", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"frying pan" }
+    ]
+  },
+  {
+    "id" : "spider tempura",
+    "name": "Tempura d'araignée",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "gourmet salt", "quantity": 1 },
+      { "id": "any flour", "quantity": 1 },
+      { "id": "any oil", "quantity": 1 },
+      { "id": "any spider", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"frying pan" }
+    ]
+  },
+  {
+    "id" : "sweet potato chips",
+    "name": "Chips de patates douces",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "sweet potato", "quantity": 1 },
+      { "id": "any oil", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"frying pan" }
+    ]
+  },
+  {
+    "id" : "sweet potato poutine",
+    "name": "Poutine à la patate douce",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "sweet potato", "quantity": 1 },
+      { "id": "any cheese", "quantity": 1 },
+      { "id": "any oil", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"frying pan" }
+    ]
   }
+
 ]
