@@ -2,14 +2,24 @@ import React from 'react';
 import { Fish } from './FishComponent';
 
 type FishCardProps = {
-    fish: Fish
+    fish: Fish;
+    onClose: () => void;
 };
 
-const FishCard: React.FC<FishCardProps> = ({ fish }) => {
+const FishCard: React.FC<FishCardProps> = ({ fish, onClose }) => {
     return(
         <div className='flex justify-center w-full mt-6'>
-            <div className='bg-white/50 rounded-3xl p-4 w-[90vw] max-w-[35rem] flex flex-col sm:flex-row gap-4'>
-                
+            <div className='relative bg-white/50 rounded-3xl p-4 w-[90vw] max-w-[35rem] flex flex-col sm:flex-row gap-4'>
+                {/* close window */}
+                <button
+                    onClick={onClose}
+                    aria-label='Fermer'
+                    className='absolute top-0 right-0 px-4 py-2 text-xl font-bold uppercase text-gray-800 hover:text-red-600 transition-colors duration-200 z-10'
+                    style={{ zIndex: 10 }} // Assurez-vous que le bouton est au-dessus des autres éléments
+                >
+                    X
+                </button>
+
                 {/* Image toujours en haut à gauche */}
                 <div className='w-full h-full sm:w-auto flex justify-center align-middle items-center sm:items-center'>
                     <img

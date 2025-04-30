@@ -25,7 +25,22 @@ const Cooking: React.FC = () => {
     }, []);
   
     const handleRecipeClick = (id: string) => {
-        setSelectedRecipeId((currentId) => (currentId === id ? null : id));
+        setSelectedRecipeId((currentId) => {
+            // Si la recette est déjà sélectionnée, on la ferme et on arrête de scroller
+            if (currentId === id) {
+                return null;
+            } else {
+                // Si une recette différente est sélectionnée, on fait défiler la page vers la div avec l'id "craft"
+                const craftDiv = document.getElementById('craft');
+                if (craftDiv) {
+                    craftDiv.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start', // Positionner le haut de la div en haut de la fenêtre
+                    });
+                }
+                return id;
+            }
+        });
     };
   
     const selectedRecipe = recipesData.find((recipe) => recipe.id === selectedRecipeId);
@@ -38,7 +53,7 @@ const Cooking: React.FC = () => {
             <h2 className='text-3xl font-semibold text-center'>Recettes Disponibles</h2>
             <div className='w-30 h-1 bg-[#ffd166] my-2'></div>
 
-            <div className='flex flex-row flex-wrap justify-center items-center gap-2 mt-6'>
+            <div id='craft' className='flex flex-row flex-wrap justify-center items-center gap-2 mt-6'>
                 {selectedRecipe ? (
                     [...new Set(selectedRecipe.machines.map(m => m.id))].map(machineId => {
                         const fullMachine = machinesMap[machineId];
@@ -64,6 +79,7 @@ const Cooking: React.FC = () => {
                                         name: itemsMap[alt.id] ?? alt.id, // Enrichir les alternatives avec 'name'
                                     })) ?? [],
                                 }}
+                                onClose={() => setSelectedRecipeId(null)}
                             />
                         );
                     })

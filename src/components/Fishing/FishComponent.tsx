@@ -21,15 +21,16 @@ export type Fish = {
 
 type FishProps = {
     fish: Fish;
+    onClose: () => void;
 };
 
-const FishComponent: React.FC<FishProps> = ({ fish }) => {
+const FishComponent: React.FC<FishProps> = ({ fish, onClose }) => {
     return(
         <div className='w-auto h-full'>
             {fish.name.length > 0 ? (
-                <FishCard key={fish.id} fish={fish} />
+                <FishCard key={fish.id} fish={fish} onClose={onClose} />
             ) : (
-                <FishCard key='default' fish={fish} />
+                <FishCard key='default' fish={fish} onClose={onClose} />
             )}
         </div>
     );
