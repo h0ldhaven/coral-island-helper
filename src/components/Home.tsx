@@ -45,7 +45,14 @@ const Home: React.FC<HomeProps> = ({ setActiveComponent }) => {
             {/* Call to action */}
             <div className='mt-12 mb-10 px-4 text-center z-10'>
                 <p className='text-lg md:text-xl'>
-                Prêt à explorer ? Utilisez le menu ci-dessus pour choisir une catégorie et commencez votre aventure !
+                    Prêt à explorer ? Utilisez le menu ci-dessus pour choisir une catégorie et commencez votre aventure !
+                </p>
+                <p className='border-1 mt-8 text-md md:text-lg text-red-800/80 px-6 py-2'>
+                    <span className='font-bold'>Attention</span>, cette application est encore en développement, 
+                    <br />
+                    certains onglets ne sont pas encore terminés où sont en cours de développement et évoluent quotidiennement
+                    <br />
+                    Nous vous souhaitons néanmoins une bonne visite !
                 </p>
             </div>
         </section>

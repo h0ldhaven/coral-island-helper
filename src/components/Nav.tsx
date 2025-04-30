@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Cooking from './gameplay/Cooking';
-import Crafting from './gameplay/Crafting';
+import Cooking from './Cooking/Cooking';
+import Crafting from './Crafting/Crafting';
 import Fishing from './Fishing/Fishing';
 import HomePage from './Home';
 

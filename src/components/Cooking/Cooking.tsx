@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import recipesData from '../../data/recipes.json';
 import machinesData from '../../data/machines.json';
 import itemsData from '../../data/ingredients.json';
-import RecipeComponent, { Machine } from '../RecipeComponent';
+import RecipeComponent, { Machine } from './RecipeComponent';
   
 const Cooking: React.FC = () => {
     const [selectedRecipeId, setSelectedRecipeId] = useState<string | null>(null);
@@ -32,11 +32,45 @@ const Cooking: React.FC = () => {
   
     return (
         <section className='flex flex-col items-center justify-baseline min-h-screen relative p-4'>
-            <h1 className='text-5xl font-bold text-center'>Cuisine - Fabrication</h1>
-            <div className='w-60 h-1 bg-[#ef476f] my-2'></div>
+            <h1 className='text-5xl font-bold text-center'>Cuisine - Préparation</h1>
+            <div className='w-60 h-1 bg-[#ef476f] my-4'></div>
 
             <h2 className='text-3xl font-semibold text-center'>Recettes Disponibles</h2>
             <div className='w-30 h-1 bg-[#ffd166] my-2'></div>
+
+            <div className='flex flex-row flex-wrap justify-center items-center gap-2 mt-6'>
+                {selectedRecipe ? (
+                    [...new Set(selectedRecipe.machines.map(m => m.id))].map(machineId => {
+                        const fullMachine = machinesMap[machineId];
+
+                        if (!fullMachine) return null;
+
+                        return (
+                            <RecipeComponent 
+                                key={fullMachine.id}
+                                machine={fullMachine} 
+                                recipe={{
+                                    ...selectedRecipe,
+                                    ingredients: selectedRecipe.ingredients.map((ingredient) => ({
+                                        ...ingredient,
+                                        name: itemsMap[ingredient.id] ?? ingredient.id, 
+                                    })),
+                                    machines: [...new Set(selectedRecipe.machines.map(m => ({
+                                        ...m,
+                                        name: machinesMap[m.id]?.name ?? 'Inconnu',
+                                    })))], // Supprime les doublons de machines
+                                    alternatives: selectedRecipe.alternatives?.map((alt) => ({
+                                        ...alt,
+                                        name: itemsMap[alt.id] ?? alt.id, // Enrichir les alternatives avec 'name'
+                                    })) ?? [],
+                                }}
+                            />
+                        );
+                    })
+                ) : (
+                    <p className='mt-10 mb-10 font-comfortaa text-xl text-blue-100'>Appuyez sur un plat pour afficher son craft.</p>
+                )}
+            </div>
             
             <ul className='flex flex-wrap justify-center items-center sm:mt-0 xs:gap-2 sm:gap-3 md:gap-4 gap-1 mx-60'>
                 {recipesData.map((recipe) => (
@@ -74,42 +108,6 @@ const Cooking: React.FC = () => {
                     </li>
                 ))}
             </ul>
-  
-            <hr />
-            
-            <div className='flex flex-row flex-wrap justify-center items-center gap-2 mt-6'>
-                {selectedRecipe ? (
-                    [...new Set(selectedRecipe.machines.map(m => m.id))].map(machineId => {
-                        const fullMachine = machinesMap[machineId];
-
-                        if (!fullMachine) return null;
-
-                        return (
-                            <RecipeComponent 
-                                key={fullMachine.id}
-                                machine={fullMachine} 
-                                recipe={{
-                                    ...selectedRecipe,
-                                    ingredients: selectedRecipe.ingredients.map((ingredient) => ({
-                                        ...ingredient,
-                                        name: itemsMap[ingredient.id] ?? ingredient.id, 
-                                    })),
-                                    machines: [...new Set(selectedRecipe.machines.map(m => ({
-                                        ...m,
-                                        name: machinesMap[m.id]?.name ?? 'Inconnu',
-                                    })))], // Supprime les doublons de machines
-                                    alternatives: selectedRecipe.alternatives?.map((alt) => ({
-                                        ...alt,
-                                        name: itemsMap[alt.id] ?? alt.id, // Enrichir les alternatives avec 'name'
-                                    })) ?? [],
-                                }}
-                            />
-                        );
-                    })
-                ) : (
-                    <p className='mt-20 font-comfortaa text-xl text-blue-100'>Veuillez sélectionner une recette...</p>
-                )}
-            </div>
         </section>
     );
 };

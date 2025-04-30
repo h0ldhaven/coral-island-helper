@@ -14,7 +14,7 @@ const Fishing: React.FC = () => {
     return (
         <section className='flex flex-col items-center justify-baseline min-h-screen relative p-4'>
             <h1 className='text-5xl font-bold text-center'>Pêche - Poissons</h1>
-            <div className='w-60 h-1 bg-[#ef476f] my-2'></div>
+            <div className='w-60 h-1 bg-[#ef476f] my-4'></div>
 
             <h2 className='text-3xl font-semibold text-center'>Liste des poissons</h2>
             <div className='w-30 h-1 bg-[#ffd166] my-2'></div>
