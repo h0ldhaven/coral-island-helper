@@ -578,6 +578,107 @@
     "machines": [
       { "id":"frying pan" }
     ]
+  },
+
+  {
+    "id" : "assorted grilled platter",
+    "name": "Assortiment de grillades",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "any honey", "quantity": 1 },
+      { "id": "any vegetable", "quantity": 2 }
+    ],
+    "machines": [
+      { "id":"grill" }
+    ]
+  },
+  {
+    "id" : "bug jerky",
+    "name": "Viande séchée d'insectes",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "any insect", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"grill" }
+    ]
+  },
+  {
+    "id" : "corn on the cob",
+    "name": "Épi de maïs grillé",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "corn", "quantity": 1 },
+      { "id": "any butter", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"grill" }
+    ]
+  },
+  {
+    "id" : "grilled fish",
+    "name": "Poisson grillé",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "any fish", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"grill" }
+    ]
+  },
+  {
+    "id" : "herbed tempeh",
+    "name": "Tempeh aux herbes",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "basil", "quantity": 1 },
+      { "id": "gourmet salt", "quantity": 1 },
+      { "id": "tempeh", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"grill" }
+    ]
+  },
+  {
+    "id" : "smoked fish",
+    "name": "Poisson fumé",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "wood", "quantity": 1 },
+      { "id": "any fish", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"grill" }
+    ]
+  },
+  {
+    "id" : "smoked salmon",
+    "name": "Saumon fumé",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "salmon", "quantity": 1 },
+      { "id": "wood", "quantity": 1 }
+    ],
+    "alternatives": [
+        { "replaceItem": "salmon", "id": "sockeye salmon", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"grill" }
+    ]
+  },
+  {
+    "id" : "summer burger",
+    "name": "Burger d'été",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "bread", "quantity": 1 },
+      { "id": "pineapple", "quantity": 1 },
+      { "id": "shallot", "quantity": 1 },
+      { "id": "any cheese", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"grill" }
+    ]
   }
 
 ]
