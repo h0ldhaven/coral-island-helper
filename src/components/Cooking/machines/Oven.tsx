@@ -86,7 +86,7 @@ const Oven: React.FC<OvenProps> = ({ machine, recipe, onClose }) => {
 
 
             {/* Bas du container */}
-            <div className='relative w-[35rem] min-w-[5rem] max-w-[65vw] h-auto py-12 bg-white/50 rounded-b-3xl flex flex-wrap justify-center items-center p-2 gap-2'>
+            <div className='relative w-[35rem] min-w-[5rem] max-w-[65vw] h-auto py-12 bg-white/50 rounded-3xl flex flex-wrap justify-center items-center p-2 gap-2'>
                 <div className='w-98 flex flex-row flex-wrap justify-center items-start gap-2'>
                     {ingredients.map((ingredient, index) =>(
                         

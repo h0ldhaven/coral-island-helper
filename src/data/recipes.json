@@ -26,7 +26,7 @@
   },
   {
     "id": "lettuce wrap",
-    "name": "Feuille de laitue",
+    "name": "Roulé de laitue",
     "quantity": 2,
     "ingredients": [
       { "id": "lettuce", "quantity": 1 },
@@ -577,6 +577,383 @@
     ],
     "machines": [
       { "id":"frying pan" }
+    ]
+  },
+
+  {
+    "id" : "assorted grilled platter",
+    "name": "Assortiment de grillades",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "any honey", "quantity": 1 },
+      { "id": "any vegetable", "quantity": 2 }
+    ],
+    "machines": [
+      { "id":"grill" }
+    ]
+  },
+  {
+    "id" : "bug jerky",
+    "name": "Viande séchée d'insectes",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "any insect", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"grill" }
+    ]
+  },
+  {
+    "id" : "corn on the cob",
+    "name": "Épi de maïs grillé",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "corn", "quantity": 1 },
+      { "id": "any butter", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"grill" }
+    ]
+  },
+  {
+    "id" : "grilled fish",
+    "name": "Poisson grillé",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "any fish", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"grill" }
+    ]
+  },
+  {
+    "id" : "herbed tempeh",
+    "name": "Tempeh aux herbes",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "basil", "quantity": 1 },
+      { "id": "gourmet salt", "quantity": 1 },
+      { "id": "tempeh", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"grill" }
+    ]
+  },
+  {
+    "id" : "smoked fish",
+    "name": "Poisson fumé",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "wood", "quantity": 1 },
+      { "id": "any fish", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"grill" }
+    ]
+  },
+  {
+    "id" : "smoked salmon",
+    "name": "Saumon fumé",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "salmon", "quantity": 1 },
+      { "id": "wood", "quantity": 1 }
+    ],
+    "alternatives": [
+        { "replaceItem": "salmon", "id": "sockeye salmon", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"grill" }
+    ]
+  },
+  {
+    "id" : "summer burger",
+    "name": "Burger d'été",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "bread", "quantity": 1 },
+      { "id": "pineapple", "quantity": 1 },
+      { "id": "shallot", "quantity": 1 },
+      { "id": "any cheese", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"grill" }
+    ]
+  },
+
+  {
+    "id" : "apple pie",
+    "name": "Tarte aux pommes",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "apple", "quantity": 1 },
+      { "id": "wheat flour", "quantity": 1 },
+      { "id": "butter", "quantity": 1 },
+      { "id": "any honey", "quantity": 1 }
+    ],
+    "alternatives": [
+        { "replaceItem": "butter", "id": "large butter", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"oven" }
+    ]
+  },
+  {
+    "id" : "bread",
+    "name": "Pain",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "any flour", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"oven" }
+    ]
+  },
+  {
+    "id" : "butter croissant",
+    "name": "Croissant au beurre",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "any butter", "quantity": 1 },
+      { "id": "any flour", "quantity": 1 },
+      { "id": "any milk", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"oven" }
+    ]
+  },
+  {
+    "id" : "chocolate chip muffins",
+    "name": "Muffins aux pépites de chocolat",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "cocoa bean", "quantity": 1 },
+      { "id": "any egg", "quantity": 1 },
+      { "id": "any flour", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"oven" }
+    ]
+  },
+  {
+    "id" : "cookies",
+    "name": "Cookies",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "cocoa bean", "quantity": 1 },
+      { "id": "any butter", "quantity": 1 },
+      { "id": "any flour", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"oven" }
+    ]
+  },
+  {
+    "id" : "eggplant lasagna",
+    "name": "Lasagnes aux aubergines",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "eggplant", "quantity": 1 },
+      { "id": "tomato", "quantity": 1 },
+      { "id": "any cheese", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"oven" }
+    ]
+  },
+  {
+    "id" : "fruit tart",
+    "name": "Tarte aux fruits",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "sugar", "quantity": 1 },
+      { "id": "wheat flour", "quantity": 1 },
+      { "id": "any fruit", "quantity": 2 }
+    ],
+    "machines": [
+      { "id":"oven" }
+    ]
+  },
+  {
+    "id" : "hawaiian pizza",
+    "name": "Pizza hawaïenne",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "pineapple", "quantity": 1 },
+      { "id": "any cheese", "quantity": 1 },
+      { "id": "any flour", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"oven" }
+    ]
+  },
+  {
+    "id" : "jackfruit casserole",
+    "name": "Casserole de jacquier",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "jackfruit", "quantity": 1 },
+      { "id": "potato", "quantity": 1 },
+      { "id": "any milk", "quantity": 1 },
+      { "id": "any mushroom", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"oven" }
+    ]
+  },
+  {
+    "id" : "kue kancing",
+    "name": "Gâteau aux boutons",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "sugar", "quantity": 1 },
+      { "id": "any egg", "quantity": 1 },
+      { "id": "any flour", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"oven" }
+    ]
+  },
+  {
+    "id" : "minced jackfruit pie",
+    "name": "Tarte au jacquier haché",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "jackfruit", "quantity": 1 },
+      { "id": "any butter", "quantity": 1 },
+      { "id": "any flour", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"oven" }
+    ]
+  },
+  {
+    "id" : "mooncake",
+    "name": "Gâteau de lune",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "lotus", "quantity": 1 },
+      { "id": "any egg", "quantity": 1 },
+      { "id": "any flour", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"oven" }
+    ]
+  },
+  {
+    "id" : "mushroom jerky",
+    "name": "Champignons séchés",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "any mushroom", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"oven" }
+    ]
+  },
+  {
+    "id" : "oven-baked risotto",
+    "name": "Risotto au four",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "rice", "quantity": 1 },
+      { "id": "any butter", "quantity": 1 },
+      { "id": "any cheese", "quantity": 1 },
+      { "id": "any mushroom", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"oven" }
+    ]
+  },
+  {
+    "id" : "pineapple upside-down cake",
+    "name": "Gâteau renversé à l'ananas",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "pineapple", "quantity": 1 },
+      { "id": "sugar", "quantity": 1 },
+      { "id": "wheat flour", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"oven" }
+    ]
+  },
+  {
+    "id" : "pizza",
+    "name": "Pizza",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "tomato", "quantity": 1 },
+      { "id": "any cheese", "quantity": 1 },
+      { "id": "any flour", "quantity": 1 },
+      { "id": "any mushroom", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"oven" }
+    ]
+  },
+  {
+    "id" : "pumpkin pie",
+    "name": "Tarte à la citrouille",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "pumpkin", "quantity": 1 },
+      { "id": "sugar", "quantity": 1 },
+      { "id": "any egg", "quantity": 1 },
+      { "id": "any flour", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"oven" }
+    ]
+  },
+  {
+    "id" : "raisins secs",
+    "name": "Raisins secs",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "grape", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"oven" }
+    ]
+  },
+  {
+    "id" : "ratatouille",
+    "name": "Ratatouille",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "bell pepper", "quantity": 1 },
+      { "id": "eggplant", "quantity": 1 },
+      { "id": "olive", "quantity": 1 },
+      { "id": "tomato", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"oven" }
+    ]
+  },
+  {
+    "id" : "red velvet cake",
+    "name": "Gateau rouge velours",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "strawberry", "quantity": 1 },
+      { "id": "any egg", "quantity": 1 },
+      { "id": "any flour", "quantity": 1 },
+      { "id": "any milk", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"oven" }
+    ]
+  },
+  {
+    "id" : "vegetable jerky",
+    "name": "Légumes séchés",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "any vegetable", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"oven" }
     ]
   }
 
