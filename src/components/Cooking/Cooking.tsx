@@ -88,12 +88,12 @@ const Cooking: React.FC = () => {
                 )}
             </div>
             
-            <ul className='flex flex-wrap justify-center items-center sm:mt-0 xs:gap-2 sm:gap-3 md:gap-4 gap-1 mx-60'>
+            <ul className='flex flex-row flex-wrap justify-center items-center xs:mx-10 sm:mx-20 md:mx-30 lg:mx-40 mx-4 xs:gap-1 sm:gap-2 md:gap-4 gap-1'>
                 {recipesData.map((recipe) => (
                     <li
                         key={recipe.id}
                         onClick={() => handleRecipeClick(recipe.id)}
-                        className='flex-shrink-0 w-full sm:w-1/4 md:w-1/6 lg:w-1/18 xl:w-1/10 min-w-[90px] max-w-[100px] flex justify-center mt-12'
+                        className='flex flex-shrink-0 justify-center w-full min-w-[90px] max-w-[100px] xs:mt-2 sm:mt-4 md:mt-8 mt-12 xs:w-1/2 sm:w-1/4 md:w-1/6 lg:w-1/18 xl:w-1/10'
                     >
                         <div className='group relative w-full h-full'>
                             <img 
