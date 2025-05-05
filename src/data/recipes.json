@@ -955,6 +955,411 @@
     "machines": [
       { "id":"oven" }
     ]
+  },
+
+  {
+    "id" : "basil pesto pasta",
+    "name": "Pâtes au pesto et basilic",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "basil", "quantity": 1 },
+      { "id": "tomato", "quantity": 1 },
+      { "id": "wheat flour", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"pot" }
+    ]
+  },
+  {
+    "id" : "clam chowder",
+    "name": "Chaudrée de palourdes",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "any clam", "quantity": 1 },
+      { "id": "any milk", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"pot" }
+    ]
+  },
+  {
+    "id" : "fish soup",
+    "name": "Soupe de poisson",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "sake", "quantity": 1 },
+      { "id": "any fish", "quantity": 1 },
+      { "id": "any vegetable", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"pot" }
+    ]
+  },
+  {
+    "id" : "gnocchi",
+    "name": "Gnocchi",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "potato", "quantity": 1 },
+      { "id": "any butter", "quantity": 1 },
+      { "id": "any cheese", "quantity": 1 },
+      { "id": "any flour", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"pot" }
+    ]
+  },
+  {
+    "id" : "green curry",
+    "name": "Curry vert",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "basil", "quantity": 1 },
+      { "id": "bell pepper", "quantity": 1 },
+      { "id": "peas", "quantity": 1 },
+      { "id": "any coconut", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"pot" }
+    ]
+  },
+  {
+    "id" : "hard-boiled_duck_egg",
+    "name": "Œuf dur de canard",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "duck egg", "quantity": 1 }
+    ],
+    "alternatives": [
+        { "replaceItem": "duck egg", "id": "large duck egg", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"pot" }
+    ]
+  },
+  {
+    "id" : "hard-boiled_egg",
+    "name": "Œuf dur de poule",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "chicken egg", "quantity": 1 }
+    ],
+    "alternatives": [
+        { "replaceItem": "chicken egg", "id": "large chicken egg", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"pot" }
+    ]
+  },
+  {
+    "id" : "hard-boiled_quail_egg",
+    "name": "Œuf dur de caille",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "quail egg", "quantity": 1 }
+    ],
+    "alternatives": [
+        { "replaceItem": "quail egg", "id": "large quail egg", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"pot" }
+    ]
+  },
+  {
+    "id" : "hot cocoa",
+    "name": "Chocolat chaud",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "cocoa bean", "quantity": 1 },
+      { "id": "cow milk", "quantity": 1 }
+    ],
+    "alternatives": [
+        { "replaceItem": "cow milk", "id": "large cow milk", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"pot" }
+    ]
+  },
+  {
+    "id" : "kue lapis",
+    "name": "Gâteau à étages",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "sugar", "quantity": 1 },
+      { "id": "taro root", "quantity": 1 },
+      { "id": "any coconut", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"pot" }
+    ]
+  },
+  {
+    "id" : "lodeh",
+    "name": "Lodeh",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "eggplant", "quantity": 1 },
+      { "id": "tempeh", "quantity": 1 },
+      { "id": "any coconut", "quantity": 1 },
+      { "id": "any vegetable", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"pot" }
+    ]
+  },
+  {
+    "id" : "red curry",
+    "name": "Curry rouge",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "carrot", "quantity": 1 },
+      { "id": "hot pepper", "quantity": 1 },
+      { "id": "shallot", "quantity": 1 },
+      { "id": "any coconut", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"pot" }
+    ]
+  },
+  {
+    "id" : "seafood ramen",
+    "name": "Ramen aux fruits de mer",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "wheat flour", "quantity": 1 },
+      { "id": "any fish", "quantity": 1 },
+      { "id": "any mussel", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"pot" }
+    ]
+  },
+  {
+    "id" : "stew",
+    "name": "Ragoût",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "potato", "quantity": 1 },
+      { "id": "any mushroom", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"pot" }
+    ]
+  },
+  {
+    "id" : "stone soup",
+    "name": "Soupe de pierres",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "stone", "quantity": 1 },
+      { "id": "any edible ingredient", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"pot" }
+    ]
+  },
+  {
+    "id" : "tomato soup",
+    "name": "Soupe à la tomate",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "tomato", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"pot" }
+    ]
+  },
+  {
+    "id" : "veggie ramen",
+    "name": "Ramen végétarien",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "kombu", "quantity": 1 },
+      { "id": "wheat flour", "quantity": 1 },
+      { "id": "any mushroom", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"pot" }
+    ]
+  },
+  {
+    "id" : "wild mushroom polenta",
+    "name": "Polenta aux champignons sauvages",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "corn", "quantity": 1 },
+      { "id": "any mushroom", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"pot" }
+    ]
+  },
+
+  {
+    "id" : "cauliflower casserole",
+    "name": "Casserole de chou-fleur",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "cauliflower", "quantity": 1 },
+      { "id": "potato", "quantity": 1 },
+      { "id": "any flour", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"skillet" }
+    ]
+  },
+  {
+    "id" : "fish taco",
+    "name": "Tacos au poisson",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "tortilla", "quantity": 1 },
+      { "id": "any fish", "quantity": 1 },
+      { "id": "any mayonnaise", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"skillet" }
+    ]
+  },
+  {
+    "id" : "hash browns",
+    "name": "Pommes de terre rissolées",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "potato", "quantity": 1 },
+      { "id": "any egg", "quantity": 1 },
+      { "id": "any flour", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"skillet" }
+    ]
+  },
+  {
+    "id" : "pancakes",
+    "name": "Pancakes",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "maple syrup", "quantity": 1 },
+      { "id": "any flour", "quantity": 1 },
+      { "id": "any fruit", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"skillet" }
+    ]
+  },
+  {
+    "id" : "pepper and mushroom flatbread",
+    "name": "Pain plat aux poivrons et aux champignons",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "bell pepper", "quantity": 1 },
+      { "id": "any flour", "quantity": 1 },
+      { "id": "any mushroom", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"skillet" }
+    ]
+  },
+  {
+    "id" : "popiah",
+    "name": "Popiah",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "bamboo shoot", "quantity": 1 },
+      { "id": "carrot", "quantity": 1 },
+      { "id": "crab", "quantity": 1 }
+    ],
+    "alternatives": [
+        { "replaceItem": "crab", "id": "shrimp", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"skillet" }
+    ]
+  },
+  {
+    "id" : "sauteed chard",
+    "name": "Blettes sautées",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "chard", "quantity": 1 },
+      { "id": "any oil", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"skillet" }
+    ]
+  },
+  {
+    "id" : "scrambled eggs",
+    "name": "œufs brouillés",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "any egg", "quantity": 1 },
+      { "id": "any milk", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"skillet" }
+    ]
+  },
+  {
+    "id" : "serabi",
+    "name": "Serabi",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "gourmet salt", "quantity": 1 },
+      { "id": "rice flour", "quantity": 1 },
+      { "id": "sugar", "quantity": 1 },
+      { "id": "any coconut", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"skillet" }
+    ]
+  },
+  {
+    "id" : "spring frittata",
+    "name": "Frittata de printemps",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "any egg", "quantity": 1 },
+      { "id": "any vegetable", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"skillet" }
+    ]
+  },
+  {
+    "id" : "sunny side-up eggs",
+    "name": "Œufs au plat",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "any egg", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"skillet" }
+    ]
+  },
+  {
+    "id" : "tortilla",
+    "name": "Tortilla",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "any flour", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"skillet" }
+    ]
+  },
+  {
+    "id" : "vegan taco",
+    "name": "Tacos végétaliens",
+    "quantity": 2,
+    "ingredients": [
+      { "id": "kiracha sauce", "quantity": 1 },
+      { "id": "tortilla", "quantity": 1 },
+      { "id": "any vegetable", "quantity": 1 }
+    ],
+    "machines": [
+      { "id":"skillet" }
+    ]
   }
 
 ]
