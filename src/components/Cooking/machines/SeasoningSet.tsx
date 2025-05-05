@@ -1,14 +1,23 @@
 import React from 'react';
-import { Alternative, Machine, Recipe } from '../RecipeComponent';
+import { Machine } from '../../../types/cooking/Machine';
+import { AlternativeRecipe } from '../../../types/cooking/AlternativeRecipe';
+import { CardButton } from '../../../types/CardButton';
+import { Recipe } from '../../../types/cooking/Recipe';
 
 type SeasoningSetProps = {
     machine: Machine;
     recipe: Recipe;
-    alternatives: Alternative[];
-    onClose: () => void;
+    alternatives: AlternativeRecipe[];
+    button: CardButton;
 }
 
-const SeasoningSet: React.FC<SeasoningSetProps> = ({ machine, recipe, onClose }) => {
+const SeasoningSet: React.FC<SeasoningSetProps> = (
+    { 
+        machine, 
+        recipe, 
+        button 
+    }
+) => {
     const { id: itemId, name: itemName, quantity: itemQuantity, ingredients, alternatives } = recipe;
     
     return(
@@ -16,12 +25,29 @@ const SeasoningSet: React.FC<SeasoningSetProps> = ({ machine, recipe, onClose })
             <div className='relative w-[35rem] min-w-[5rem] max-w-[65vw] min-h-[5rem] max-h-[35vh] h-[14rem] bg-white/50 rounded-t-3xl p-4 flex flex-col items-center'>
                 {/* close window */}
                 <button
-                    onClick={onClose}
+                    onClick={button.onClose}
                     aria-label='Fermer'
                     className='absolute right-0 top-0 mx-4 my-2 px-2 py-1 text-xl font-bold uppercase text-gray-800 hover:text-red-600 transition-colors duration-200 z-10'
                     style={{ zIndex: 10 }} // Assurez-vous que le bouton est au-dessus des autres éléments
                 >
                     X
+                </button>
+
+                <button
+                    onClick={button.onPrevious}
+                    disabled={button.isFirst}
+                    aria-label='Recette précédente'
+                    className='absolute top-3/10 -translate-y-3/10 left-0 z-11 p-2 bg-red-500 text-white rounded-full disabled:opacity-50 hover:bg-red-600'
+                >
+                    ←
+                </button>
+                <button
+                    onClick={button.onNext}
+                    disabled={button.isLast}
+                    aria-label='Recette suivante'
+                    className='absolute top-3/10 -translate-y-3/10 right-0 z-11 p-2 bg-green-500 text-white rounded-full disabled:opacity-50 hover:bg-green-600'
+                >
+                    →
                 </button>
                 
                 {/* Haut du container */}

@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import recipesData from '../../data/recipes.json';
 import machinesData from '../../data/machines.json';
 import itemsData from '../../data/ingredients.json';
-import RecipeComponent, { Machine } from './RecipeComponent';
+import RecipeComponent from './RecipeComponent';
+import { Machine } from '../../types/cooking/Machine';
   
 const Cooking: React.FC = () => {
     const [selectedRecipeId, setSelectedRecipeId] = useState<string | null>(null);
@@ -42,6 +43,24 @@ const Cooking: React.FC = () => {
             }
         });
     };
+
+    const handlePreviousRecipe = () => {
+        if (!selectedRecipeId) return;
+    
+        const currentIndex = recipesData.findIndex(r => r.id === selectedRecipeId);
+        if (currentIndex > 0) {
+            setSelectedRecipeId(recipesData[currentIndex - 1].id);
+        }
+    };
+    
+    const handleNextRecipe = () => {
+        if (!selectedRecipeId) return;
+    
+        const currentIndex = recipesData.findIndex(r => r.id === selectedRecipeId);
+        if (currentIndex < recipesData.length - 1) {
+            setSelectedRecipeId(recipesData[currentIndex + 1].id);
+        }
+    };
   
     const selectedRecipe = recipesData.find((recipe) => recipe.id === selectedRecipeId);
   
@@ -55,37 +74,45 @@ const Cooking: React.FC = () => {
 
             <div id='craft' className='flex flex-row flex-wrap justify-center items-center gap-2 mt-6'>
                 {selectedRecipe ? (
-                    [...new Set(selectedRecipe.machines.map(m => m.id))].map(machineId => {
-                        const fullMachine = machinesMap[machineId];
+                    <div className='relative flex items-center'>
+                        {[...new Set(selectedRecipe.machines.map(m => m.id))].map(machineId => {
+                            const fullMachine = machinesMap[machineId];
 
-                        if (!fullMachine) return null;
+                            if (!fullMachine) return null;
 
-                        return (
-                            <RecipeComponent 
-                                key={fullMachine.id}
-                                machine={fullMachine} 
-                                recipe={{
-                                    ...selectedRecipe,
-                                    name: selectedRecipe.name && selectedRecipe.name !== 'null'
-                                        ? selectedRecipe.name
-                                        : itemsMap[selectedRecipe.id] ?? selectedRecipe.id,
-                                    ingredients: selectedRecipe.ingredients.map((ingredient) => ({
-                                        ...ingredient,
-                                        name: itemsMap[ingredient.id] ?? ingredient.id, 
-                                    })),
-                                    machines: [...new Set(selectedRecipe.machines.map(m => ({
-                                        ...m,
-                                        name: machinesMap[m.id]?.name ?? 'Inconnu',
-                                    })))], // Supprime les doublons de machines
-                                    alternatives: selectedRecipe.alternatives?.map((alt) => ({
-                                        ...alt,
-                                        name: itemsMap[alt.id] ?? alt.id, // Enrichir les alternatives avec 'name'
-                                    })) ?? [],
-                                }}
-                                onClose={() => setSelectedRecipeId(null)}
-                            />
-                        );
-                    })
+                            return (
+                                <RecipeComponent 
+                                    key={fullMachine.id}
+                                    machine={fullMachine} 
+                                    recipe={{
+                                        ...selectedRecipe,
+                                        name: selectedRecipe.name && selectedRecipe.name !== 'null'
+                                            ? selectedRecipe.name
+                                            : itemsMap[selectedRecipe.id] ?? selectedRecipe.id,
+                                        ingredients: selectedRecipe.ingredients.map((ingredient) => ({
+                                            ...ingredient,
+                                            name: itemsMap[ingredient.id] ?? ingredient.id, 
+                                        })),
+                                        machines: [...new Set(selectedRecipe.machines.map(m => ({
+                                            ...m,
+                                            name: machinesMap[m.id]?.name ?? 'Inconnu',
+                                        })))], // Supprime les doublons de machines
+                                        alternatives: selectedRecipe.alternatives?.map((alt) => ({
+                                            ...alt,
+                                            name: itemsMap[alt.id] ?? alt.id, // Enrichir les alternatives avec 'name'
+                                        })) ?? [],
+                                    }}
+                                    button={{
+                                        onClose: () => setSelectedRecipeId(null),
+                                        onPrevious: handlePreviousRecipe,
+                                        onNext: handleNextRecipe,
+                                        isFirst: recipesData.findIndex(r => r.id === selectedRecipeId) === 0,
+                                        isLast: recipesData.findIndex(r => r.id === selectedRecipeId) === recipesData.length - 1,
+                                    }}
+                                />
+                            );
+                        })}
+                    </div>
                 ) : (
                     <p className='mt-10 mb-10 font-comfortaa text-xl text-blue-100'>Appuyez sur un plat pour afficher son craft.</p>
                 )}

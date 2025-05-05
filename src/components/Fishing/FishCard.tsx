@@ -1,23 +1,42 @@
 import React from 'react';
-import { Fish } from './FishComponent';
+import { Fish } from '../../types/fishing/Fish';
+import { CardButton } from '../../types/CardButton';
 
 type FishCardProps = {
     fish: Fish;
-    onClose: () => void;
+    button: CardButton;
 };
 
-const FishCard: React.FC<FishCardProps> = ({ fish, onClose }) => {
+const FishCard: React.FC<FishCardProps> = (props) => {
+    const { fish, button } = props;
     return(
         <div className='flex justify-center w-full mt-6'>
             <div className='relative bg-white/50 rounded-3xl p-4 w-[90vw] max-w-[35rem] flex flex-col sm:flex-row gap-4'>
                 {/* close window */}
                 <button
-                    onClick={onClose}
+                    onClick={button.onClose}
                     aria-label='Fermer'
                     className='absolute top-0 right-0 px-4 py-2 text-xl font-bold uppercase text-gray-800 hover:text-red-600 transition-colors duration-200 z-10'
                     style={{ zIndex: 10 }} // Assurez-vous que le bouton est au-dessus des autres éléments
                 >
                     X
+                </button>
+
+                <button
+                    onClick={button.onPrevious}
+                    disabled={button.isFirst}
+                    aria-label='Recette précédente'
+                    className='absolute top-3/10 -translate-y-3/10 left-0 z-11 p-2 bg-red-500 text-white rounded-full disabled:opacity-50 hover:bg-red-600'
+                >
+                    ←
+                </button>
+                <button
+                    onClick={button.onNext}
+                    disabled={button.isLast}
+                    aria-label='Recette suivante'
+                    className='absolute top-3/10 -translate-y-3/10 right-0 z-11 p-2 bg-green-500 text-white rounded-full disabled:opacity-50 hover:bg-green-600'
+                >
+                    →
                 </button>
 
                 {/* Image toujours en haut à gauche */}

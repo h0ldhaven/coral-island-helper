@@ -24,6 +24,24 @@ const Fishing: React.FC = () => {
         });
     };
 
+    const handlePreviousFish = () => {
+        if (!selectedFishId) return;
+    
+        const currentIndex = fishesData.findIndex(r => r.id === selectedFishId);
+        if (currentIndex > 0) {
+            setSelectedFishId(fishesData[currentIndex - 1].id);
+        }
+    };
+    
+    const handleNextFish = () => {
+        if (!selectedFishId) return;
+    
+        const currentIndex = fishesData.findIndex(r => r.id === selectedFishId);
+        if (currentIndex < fishesData.length - 1) {
+            setSelectedFishId(fishesData[currentIndex + 1].id);
+        }
+    };
+
     const selectedFish = fishesData.find((fish) => fish.id === selectedFishId);
 
     return (
@@ -38,7 +56,13 @@ const Fishing: React.FC = () => {
                 {selectedFish ? (
                     <FishComponent 
                         fish={selectedFish} 
-                        onClose={() => setSelectedFishId(null)}
+                        button={{
+                            onClose: () => setSelectedFishId(null),
+                            onPrevious: handlePreviousFish,
+                            onNext: handleNextFish,
+                            isFirst: fishesData.findIndex(r => r.id === selectedFishId) === 0,
+                            isLast: fishesData.findIndex(r => r.id === selectedFishId) === fishesData.length - 1,
+                        }}
                     />
                 ) : (
                     <p className='mt-10 font-comfortaa text-xl text-blue-100'>Sélectionnez un poisson pour afficher ses informations...</p>
