@@ -66,6 +66,9 @@ const Cooking: React.FC = () => {
                                 machine={fullMachine} 
                                 recipe={{
                                     ...selectedRecipe,
+                                    name: selectedRecipe.name && selectedRecipe.name !== 'null'
+                                        ? selectedRecipe.name
+                                        : itemsMap[selectedRecipe.id] ?? selectedRecipe.id,
                                     ingredients: selectedRecipe.ingredients.map((ingredient) => ({
                                         ...ingredient,
                                         name: itemsMap[ingredient.id] ?? ingredient.id, 
@@ -118,7 +121,11 @@ const Cooking: React.FC = () => {
                             />
                             {/* Infobulle */}
                             <div role='tooltip' className='absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-max px-2 py-1 bg-gray-900 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity'>
-                                {recipe.name}
+                                {
+                                    recipe.name && recipe.name !== 'null'
+                                        ? recipe.name
+                                        : itemsMap[recipe.id] ?? recipe.id
+                                }
                             </div>
                         </div>
                     </li>
