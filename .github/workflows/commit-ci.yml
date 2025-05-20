@@ -1,11 +1,19 @@
 name: CI code quality check
 
 on:
-  push
+  push:
+    branches: 
+      - '*-hotfix-**'
+      - '*-fix-**'
+      - '*-bugfix-**'
+      - '*-feature-**'
+      - '*-enhance-**'
+      - '*-refactor-**'
+      - '*-chore-**'
 
 jobs:
   test_commit_validity:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
 
     steps:
       - name: Checkout repository
@@ -17,10 +25,10 @@ jobs:
           node-version: 22
             
       - name: Install packages
-        run: npm i
+        run: npm install
 
-      - name: Check Eslint
+      - name: Check Lint code
         run: npm run lint
         
-      - name: Build
+      - name: Build project
         run: npm run build
