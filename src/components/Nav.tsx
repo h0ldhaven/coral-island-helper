@@ -28,15 +28,15 @@ const Nav: React.FC = () => {
         <nav className='flex flex-col h-screen'>
             {/* Menu */}
             {activeComponent !== null && ( // Afficher le menu uniquement si on n'est pas sur la page d'accueil
-                <div className='flex flex-wrap justify-center gap-4 p-4 w-full h-full'>
+                <div className='flex flex-wrap justify-center gap-x-4 w-full h-full'>
                     {/* Afficher le bouton "Home" si un composant est sélectionné */}
                     {activeComponent !== null && (
                         <div className='w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 p-4'>
                             <button
-                                className='bg-mediumseagreen p-6 rounded-lg shadow-lg text-center text-white w-full'
+                                className='bg-mediumseagreen py-[clamp(0.75rem,1.5vw,1.5rem)] px-[clamp(0.75rem,1.5vw,1.5rem)] rounded-lg shadow-lg text-center text-white w-full duration-500 ease-out hover:scale-110 hover:cursor-pointer active:scale-110'
                                 onClick={handleHomeClick}
                             >
-                                <h3 className='text-2xl font-bold'>Home</h3>
+                                <h3 className='text-[clamp(0.875rem,2.5vw,1.75rem)] leading-tight font-bold'>Home</h3>
                             </button>
                         </div>
                     )}
@@ -46,10 +46,10 @@ const Nav: React.FC = () => {
                         activeComponent !== component && (
                             <div key={component} className='w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 p-4'>
                                 <button
-                                    className='bg-mediumseagreen p-6 rounded-lg shadow-lg text-center text-white w-full'
+                                    className='bg-mediumseagreen py-[clamp(0.75rem,1.5vw,1.5rem)] px-[clamp(0.75rem,1.5vw,1.5rem)] rounded-lg shadow-lg text-center text-white w-full duration-500 ease-out hover:scale-110 hover:cursor-pointer active:scale-110'
                                     onClick={() => handleMenuClick(component)}
                                 >
-                                    <h3 className='text-2xl font-bold'>{name}</h3>
+                                    <h3 className='text-[clamp(0.875rem,2.5vw,1.75rem)] leading-tight font-bold'>{name}</h3>
                                 </button>
                             </div>
                         )
