@@ -110,15 +110,29 @@ const FishCard: React.FC<FishCardProps> = (props) => {
                             <div className='w-[50%] h-0.5 bg-blue-500/50 my-1 text-center mx-auto'></div>
                             <p className='ml-4 mt-6 mb-2 whitespace-pre-line'>
                                 {
-                                    fish.season
-                                        .trim()
-                                        .split(',')
-                                        .map((entry, index) => (
-                                            <span key={index} className='inline-flex items-start gap-1 mr-2'>
-                                                <span className='text-sm mt-1'>•</span>
-                                                <span>{entry.trim() || 'Peu importe'}</span>
+                                    (() => {
+                                        const genericKeywords = ['peu importe', 'toutes saisons', 'indifférent'];
+                                        const allSeasons = ['Printemps', 'Été', 'Automne', 'Hiver'];
+                                        const normalized = fish.season.toLowerCase();
+
+                                        const isGeneric = genericKeywords.some(keyword =>
+                                            normalized.includes(keyword)
+                                        );
+
+                                        const seasonsToDisplay = isGeneric
+                                            ? allSeasons
+                                            : fish.season
+                                                .split(',')
+                                                .map(s => s.trim())
+                                                .filter(Boolean);
+
+                                        return seasonsToDisplay.map((season, index) => (
+                                            <span key={index} className='inline-flex items-center gap-1 mr-4'>
+                                                <span className='text-sm'>•</span>
+                                                <span>{season}</span>
                                             </span>
-                                        ))
+                                        ));
+                                    })()
                                 }
                             </p>
                         </div>
