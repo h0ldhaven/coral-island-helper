@@ -35,8 +35,8 @@ jobs:
         with:
           node-version: 22
             
-      - name: Install packages
-        run: npm install
+      - name: Install dependencies
+        run: npm ci
 
       - name: Check Lint code
         run: npm run lint
