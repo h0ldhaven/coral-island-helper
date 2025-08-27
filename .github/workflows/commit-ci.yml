@@ -10,6 +10,17 @@ on:
       - '*-enhance-**'
       - '*-refactor-**'
       - '*-chore-**'
+      - '*-test-**'
+      - '*-ci-**'
+      - '*-build-**'
+      - '*-deps-**'
+      - '*-style-**'
+      - '*-docs-**'
+      - '*-perf-**'
+      - '*-i18n-**'
+      - '*-revert-**'
+      - '*-config-**'
+      - '*-lint-**'
 
 jobs:
   test_commit_validity:
