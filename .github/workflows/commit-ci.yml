@@ -64,6 +64,9 @@ jobs:
 
       - name: Check Lint code
         run: npm run lint
+
+      - name: Run TypeScript type check
+        run: npx tsc --noEmit
         
       - name: Build project
         run: npm run build
