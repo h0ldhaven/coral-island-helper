@@ -1,0 +1,65 @@
+name: CI Code Security Check
+
+on:
+  pull_request:
+    branches:
+      - dev
+      - main
+    types:
+      - opened
+      - reopened
+      - synchronize
+
+permissions:
+  actions: read
+  security-events: write
+
+jobs:
+  package_scan:
+    name: "📦 Package Scan"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Security audit
+        run: npm audit --audit-level=high
+
+      - name: Verify lockfile integrity
+        run: npm ci --verify-tree
+
+  security_scan:
+    name: "🛡️ Security Scan"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+       
+      - name: Install node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v3
+        with:
+          languages: javascript,typescript
+
+      - name: Build project
+        run: npm run build
+
+      - name: Analyze CodeQL
+        uses: github/codeql-action/analyze@v3
