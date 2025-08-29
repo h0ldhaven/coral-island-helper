@@ -79,15 +79,16 @@ jobs:
         run: npx license-checker --production --summary
 
   secret_scan:
-    name: "🤫 Secret Scan"
+    name: "🔐 Secret Scan"
     runs-on: ubuntu-latest
     needs: license_scan
     steps:
       - uses: actions/checkout@v4
       - name: Detect secrets with Gitleaks
-        uses: zricethezav/gitleaks-action@v2.2.0
+        uses: zricethezav/gitleaks-action@v2.3.2
         with:
-          args: "--redact"
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          redact: true
 
   security_scan:
     name: "🛡️ Security Scan"
