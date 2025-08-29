@@ -9,11 +9,6 @@ on:
       - opened
       - reopened
       - synchronize
-  
-  workflow_run:
-    workflows: ["CI Code Quality Check"]
-    types:
-      - completed
 
 permissions:
   actions: read
@@ -23,7 +18,6 @@ jobs:
   package_scan:
     name: "📦 Package Scan"
     runs-on: ubuntu-latest
-    if: github.event_name == 'pull_request' || github.event.workflow_run.head_branch == github.head_ref
 
     steps:
       - name: Checkout repository
@@ -47,7 +41,6 @@ jobs:
     name: "🔄 Dependency Update Check"
     runs-on: ubuntu-latest
     needs: package_scan
-    if: github.event_name == 'pull_request' || github.event.workflow_run.head_branch == github.head_ref
 
     steps:
       - name: Checkout repository
@@ -69,7 +62,6 @@ jobs:
     name: "📃 License Scan"
     runs-on: ubuntu-latest
     needs: dependency_update_check
-    if: github.event_name == 'pull_request' || github.event.workflow_run.head_branch == github.head_ref
 
     steps:
       - name: Checkout repository
@@ -90,7 +82,6 @@ jobs:
     name: "🔐 Secret Scan"
     runs-on: ubuntu-latest
     needs: license_scan
-    if: github.event_name == 'pull_request' || github.event.workflow_run.head_branch == github.head_ref
 
     steps:
       - name: Checkout repository
@@ -115,7 +106,6 @@ jobs:
     name: "🛡️ Security Scan"
     runs-on: ubuntu-latest
     needs: secret_scan
-    if: github.event_name == 'pull_request' || github.event.workflow_run.head_branch == github.head_ref
 
     steps:
       - name: Checkout repository
