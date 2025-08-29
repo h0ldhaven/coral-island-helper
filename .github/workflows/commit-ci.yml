@@ -22,6 +22,10 @@ on:
       - '*-config-**'
       - '*-lint-**'
 
+concurrency:
+  group: security-check-${{ github.head_ref }}
+  cancel-in-progress: true
+
 jobs:
   package_scan:
     name: "📦 Package Scan"
@@ -64,6 +68,9 @@ jobs:
 
       - name: Check Lint code
         run: npm run lint
+
+      - name: Run TypeScript type check
+        run: npx tsc --noEmit
         
       - name: Build project
         run: npm run build
