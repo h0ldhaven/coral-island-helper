@@ -1,11 +1,58 @@
-name: CI code quality check
+name: CI Code Quality Check
 
 on:
-  push
+  push:
+    branches: 
+      - '*-hotfix-**'
+      - '*-fix-**'
+      - '*-bugfix-**'
+      - '*-feature-**'
+      - '*-enhance-**'
+      - '*-refactor-**'
+      - '*-chore-**'
+      - '*-test-**'
+      - '*-ci-**'
+      - '*-build-**'
+      - '*-deps-**'
+      - '*-style-**'
+      - '*-docs-**'
+      - '*-perf-**'
+      - '*-i18n-**'
+      - '*-revert-**'
+      - '*-config-**'
+      - '*-lint-**'
+
+concurrency:
+  group: security-check-${{ github.head_ref }}
+  cancel-in-progress: true
 
 jobs:
-  test_commit_validity:
+  package_scan:
+    name: "📦 Package Scan"
     runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Security audit
+        run: npm audit --audit-level=high
+
+      - name: Verify lockfile integrity
+        run: npm ci --verify-tree
+
+  code_scan:
+    name: "⌨️ Code Scan"
+    runs-on: ubuntu-latest
+    needs: package_scan
 
     steps:
       - name: Checkout repository
@@ -16,11 +63,34 @@ jobs:
         with:
           node-version: 22
             
-      - name: Install packages
-        run: npm i
+      - name: Install dependencies
+        run: npm ci
 
-      - name: Check Eslint
+      - name: Check Lint code
         run: npm run lint
+
+      - name: Run TypeScript type check
+        run: npx tsc --noEmit
         
-      - name: Build
+      - name: Build project
         run: npm run build
+  
+  code_test:
+    name: "🧪 Code Tests"
+    runs-on: ubuntu-latest
+    needs: code_scan
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run unit tests
+        run: npm run test
