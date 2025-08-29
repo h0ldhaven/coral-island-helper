@@ -14,6 +14,10 @@ permissions:
   actions: read
   security-events: write
 
+concurrency:
+  group: security-check-${{ github.head_ref }}
+  cancel-in-progress: true
+
 jobs:
   package_scan:
     name: "📦 Package Scan"
